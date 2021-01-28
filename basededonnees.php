@@ -8,7 +8,7 @@ $hote = 'localhost';
 $base = 'lune';
 
 $dsn = 'mysql:dbname='.$base.';host=' . $hote;
-$basededonnes = new PDO($dsn, $usager, $motdepasse);
-$basededonnes ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$basededonnes->exec('SET CHARACTER SET UTF8');
+$basededonnees = new PDO($dsn, $usager, $motdepasse);
+$basededonnees ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$basededonnees->exec('SET CHARACTER SET UTF8');
 ?>
