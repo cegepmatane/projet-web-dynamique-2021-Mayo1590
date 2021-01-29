@@ -1,7 +1,7 @@
 <?php 
 include "basededonnees.php";
 
-$MESSAGE_SQL_LISTE_MISSION_APOLLO = "SELECT titre, astronautes, date from lune.missionsapollo";
+$MESSAGE_SQL_LISTE_MISSION_APOLLO = "SELECT id, titre, astronautes, date from missionsapollo";
 //echo $MESSAGE_SQL_LISTE_MISSION_APOLLO;
 
 $requeteListeMissionApollo = $basededonnees->prepare($MESSAGE_SQL_LISTE_MISSION_APOLLO);
@@ -13,6 +13,7 @@ $listeMissionApollo = $requeteListeMissionApollo->fetchAll();
 <html lang="fr">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <head>
         <meta charset="utf-8">
         <title>La lune</title>
@@ -20,20 +21,20 @@ $listeMissionApollo = $requeteListeMissionApollo->fetchAll();
 
     <body>
         <section>
-            <h1 class="mt-5">Les missions Apollo</h1>
+            <h1 class="mt-5 text-light text-center fw-lighter">Les missions Apollo</h1>
 
             <div id="liste-mission-apollo">
                 <?php 
-                foreach($listeMissionApollo as $lune)
+                foreach($listeMissionApollo as $missionApollo)
                 {
                 ?>
                     <div class="mt-5 mb-5 mx-3 card">
                     <div class="illustration"></div>
-                    <div class="card-body bg-light">
-                            <h3 class="titre text-primary"><?=$lune['titre']?></h3>
-                            <p class="astronautes">Astronautes présent: <?=$lune['astronautes']?></p>
-                            <span class="date">Date de la mission: <?=$lune['date']?></span><br>
-                            <a class="btn btn-primary mt-2" href="mission-apollo.php?mission-apollo=<?$lune['id'];?>" role="button">Voir plus...</a>
+                    <div class="card-body bg-secondary">
+                            <h3 class="titre"><?=$missionApollo['titre']?></h3>
+                            <p class="astronautes">Astronautes présent: <?=$missionApollo['astronautes']?></p>
+                            <span class="date">Date de la mission: <?=$missionApollo['date']?></span><br>
+                            <a class="btn btn-primary mt-2" href="mission-apollo.php?mission=<?=$missionApollo['id'];?>" role="button">Voir plus...</a>
                         </div>
                     </div>
                 <?php
@@ -43,7 +44,7 @@ $listeMissionApollo = $requeteListeMissionApollo->fetchAll();
         </section>
 
         <footer>
-            <nav class="navbar navbar-light bg-light">
+            <nav class="navbar navbar-light bg-secondary">
                 <div class="container-fluid">
                     <span class="navbar-text">
                         &copy Maya Lennox
