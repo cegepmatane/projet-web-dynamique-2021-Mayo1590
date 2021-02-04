@@ -1,4 +1,4 @@
-<?php¨
+<?php
     $titre = $_POST['titre'];
     $astronautes = $_POST['astronautes'];
     $date = $_POST['date'];
@@ -7,7 +7,7 @@
     $reussi = $_POST['reussi'];
     $retrour = $_POST['retour-astronautes'];
 
-    $SQL_AJOUTER_MISSION = "INSERT into missionapollo(titre, astronautes, date, resume, progres, reussi, retour-astronautes) VALUES('".$titre."','".$astronautes."','".$date."','".$resume."','".$progres."','".$reussi."','".$retrour.")";
+    $SQL_AJOUTER_MISSION = "INSERT INTO `missionsapollo` (`titre`, `astronautes`, `date`, `resume`, `progres`, `reussi`, `retour-astronautes`) VALUES(".$titre.", ".$astronautes.", ".$date.", ".$resume.", ".$progres.", ".$reussi.", ".$retrour.")";
 
     include "basededonnees.php";
     $requeteAjouterMission = $basededonnees->prepare($SQL_AJOUTER_MISSION);
