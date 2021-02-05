@@ -32,7 +32,7 @@ $missionApollo = $requeteMissionApollo->fetch();
                     <p class="resume">Mission: <?=$missionApollo['resume']?></p>
                     <p class="progres">Progrès que cette mission a procuré: <?=$missionApollo['progres']?></p>
                     <p class="reussi">Réussite de la mission: <?=$missionApollo['reussi']?></p>
-                    <p class="retour-astronautes">Astronaute encore vivant aujourd'hui: <?=$missionApollo['retour-astronautes']?></p><br>
+                    <p class="retour-astronautes">Astronaute encore vivant aujourd'hui: <?=$missionApollo['retour']?></p><br>
                 </div>
                 <a class="btn btn-primary btn-lg mt-2" href="liste-mission-apollo.php" role="button">Revenir...</a>
             </div>

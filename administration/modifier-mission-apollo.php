@@ -1,10 +1,10 @@
 <?php
-    $noMission = $_GET['missionapollo'];
+    $noMission = $_GET['mission'];
 
-    $SQL_MISSION_APOLLO = "SELECT * from missionsapollo WHERE id =" . $noMission;
+    $SQL_MISSION_APOLLO = "SELECT * FROM `missionsapollo` WHERE `id` =" .$noMission;
 
     include "basededonnees.php";
-    $requeteMissionApollo = $basededonnees->prepare($MESSAGE_SQL_MISSION_APOLLO);
+    $requeteMissionApollo = $basededonnees->prepare($SQL_MISSION_APOLLO);
     $requeteMissionApollo->execute();
     $missionApollo = $requeteMissionApollo->fetch();
 ?>
@@ -24,10 +24,11 @@
     </head>
     <body>
         <header>
-            <h1>Panneau d'administration-Les missions Apollo</h1>
+            <h1 class="text-light fw-lighter text-center mx-3 mt-5">Panneau d'administration-Les missions Apollo</h1>
         </header>
 
-        <section id="contenu">
+        <section id="contenu" class="mt-5 mb-5 mx-3 card">
+        <div class="card-body bg-secondary text-center">
             <h2>Modifier une mission Apollo</h2>
 
             <form
@@ -65,13 +66,13 @@
 
                 <div class="input-group mt-5">
                     <span for="resume" class="input-group-text">Résumé</span>
-                    <textarea
+                    <input
                     type="text"
                     class="form-control"
                     name="resume"
                     id="resume"
                     value="<?=$missionApollo['resume']?>"
-                    ></textarea>
+                    ></input>
                 </div>
 
                 <div class="input-group mt-5">
@@ -92,7 +93,7 @@
                     class="form-control"
                     name="reussis"
                     id="reussis"
-                    value="<?=$missionApollo['reussis']?>"
+                    value="<?=$missionApollo['reussi']?>"
                     />
                 </div>
 
@@ -105,7 +106,7 @@
                     class="form-control"
                     name="retour-astronaute"
                     id="retour-astronaute"
-                    value="<?=$missionApollo['retour-astronautes']?>"
+                    value="<?=$missionApollo['retour']?>"
                     />
                 </div>
 
@@ -115,8 +116,9 @@
                     value="Enregistrer"
                     role="button"
                 />
+                <input type="hidden" name="id" value="<?=$missionApollo['id']?>">
                 </form>
-            </div>
+        </div>
         </section>
 
         <footer>
