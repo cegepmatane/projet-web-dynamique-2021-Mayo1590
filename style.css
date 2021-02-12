@@ -1,3 +1,8 @@
 body {
   background: no-repeat top / cover url("background.jpg");
 }
+
+.image {
+  width: 500px;
+  height: 500px;
+}

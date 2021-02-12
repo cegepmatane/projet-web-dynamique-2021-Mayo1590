@@ -2,7 +2,7 @@
 
 include "basededonnees.php";
 
-$MESSAGE_SQL_LISTE_MISSION_APOLLO = "SELECT `id`, `titre`, `astronautes`, `date` FROM `missionsapollo`";
+$MESSAGE_SQL_LISTE_MISSION_APOLLO = "SELECT `id`, `titre`, `astronautes`, `date`, `image` FROM `missionsapollo`";
 
 $requeteListeMissionApollo = $basededonnees->prepare($MESSAGE_SQL_LISTE_MISSION_APOLLO);
 $requeteListeMissionApollo->execute();
@@ -35,6 +35,7 @@ $listeMissionApollo = $requeteListeMissionApollo->fetchAll();
                             <h3 class="titre"><?=$missionApollo['titre']?></h3>
                             <p class="astronautes">Astronautes présent: <?=$missionApollo['astronautes']?></p>
                             <span class="date">Date de la mission: <?=$missionApollo['date']?></span><br>
+                            <div class="image"><img src="../image/<?=$missionApollo['image']?>"/></div>
                             <a class="btn btn-primary mt-3 col mx-5" href="modifier-mission-apollo.php?mission=<?=$missionApollo['id'];?>" role="button">Modifier</a>
                             <a class="btn btn-primary mt-3 col mx-5" href="traitement-suprimer-mission-apollo.php?mission=<?=$missionApollo['id'];?>" role="button">Supprimer</a>
                         </div>

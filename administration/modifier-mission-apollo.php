@@ -46,8 +46,8 @@
                     <input
                     type="text"
                     class="form-control"
-                    name="astronaute"
-                    id="astronaute"
+                    name="astronautes"
+                    id="astronautes"
                     value="<?=$missionApollo['astronautes']?>"
                     />
                 </div>
@@ -91,7 +91,7 @@
                     <input
                     type="text"
                     class="form-control"
-                    name="reussis"
+                    name="reussi"
                     id="reussis"
                     value="<?=$missionApollo['reussi']?>"
                     />
@@ -104,7 +104,7 @@
                     <input
                     type="text"
                     class="form-control"
-                    name="retour-astronaute"
+                    name="retour"
                     id="retour-astronaute"
                     value="<?=$missionApollo['retour']?>"
                     />
