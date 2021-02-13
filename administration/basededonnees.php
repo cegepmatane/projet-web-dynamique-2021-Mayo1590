@@ -1,14 +1,28 @@
-<?php 
+<?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$usager = 'root';
-$motdepasse = '';
-$hote = 'localhost';
-$base = 'lune';
+$adresseCourante = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-$dsn = 'mysql:dbname='.$base.';host=' . $hote;
+$estSurServeurTim = strpos($adresseCourante, 'tiweb.cgmatane.qc.ca') !== false ? true : false;
+
+if ($estSurServeurTim) {
+    $usager = 'tiweb_lennoxm';
+    $motdepasse = 'n2vjdfzpF9';
+    $hote = 'localhost';
+    $base = 'tiweb_lennoxm';
+} else {
+    $usager = 'root';
+    $motdepasse = 'n2vjdfzpF9';
+    $hote = 'localhost';
+    $base = 'tiweb_lennoxm';
+}
+
+$dsn = 'mysql:dbname=' . $base . ';host=' . $hote;
 $basededonnees = new PDO($dsn, $usager, $motdepasse);
-$basededonnees ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// Configurer la gestion d'erreurs
+$basededonnees->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// La ligne suivante est importante pour empêcher les problèmesd'affichages
 $basededonnees->exec('SET CHARACTER SET UTF8');
-?>
+
+return $basededonnees;

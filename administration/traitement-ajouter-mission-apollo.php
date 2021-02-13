@@ -13,11 +13,11 @@ include "basededonnees.php";
 $requeteAjouterMission = $basededonnees->prepare($SQL_AJOUTER_MISSION);
 $reussiteAjout = $requeteAjouterMission->execute();
 
-$fichier_source = $_FILES['mission']['tmp'];
+$fichier_source = $_FILES['missionapollo']['tmp'];
 $racine_serveur = $_SERVER['DOCUMENT_ROOT'];
 $repertoire_projet =  ['/etudiants/2020lennoxm/projet-web-dynamique-2021-Mayo1590/'];
 $repertoire_image = "/image";
-$nom_image = $_FILES['mission']['name'];
+$nom_image = $_FILES['missionapollo']['name'];
 $fichier_destination = $racine_serveur . $repertoire_projet . $repertoire_image . $nom_image;
 $succes = move_uploaded_file($fichier_source, $fichier_destination);
 
