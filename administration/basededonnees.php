@@ -13,9 +13,9 @@ if ($estSurServeurTim) {
     $base = 'tiweb_lennoxm';
 } else {
     $usager = 'root';
-    $motdepasse = 'n2vjdfzpF9';
+    $motdepasse = '';
     $hote = 'localhost';
-    $base = 'tiweb_lennoxm';
+    $base = 'lune';
 }
 
 $dsn = 'mysql:dbname=' . $base . ';host=' . $hote;
