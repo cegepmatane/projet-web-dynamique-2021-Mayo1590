@@ -14,7 +14,7 @@ include "../include/head.php";
 
 <body>
     <section>
-        <h1 class="mt-5 text-light text-center fw-lighter">Panneau d'administration-Les missions Apollo</h1>
+        <h1 class="mt-5 text-center fw-lighter">Panneau d'administration-Les missions Apollo</h1>
 
         <a class="btn btn-lg btn-primary mx-3 mt-2" href="ajouter-mission-apollo.html" role="button">Ajouter</a>
 

@@ -8,9 +8,17 @@ $requeteMissionApollo = $basededonnees->prepare($SQL_MISSION_APOLLO);
 $requeteMissionApollo->execute();
 $missionApollo = $requeteMissionApollo->fetch();
 
-include "../include/head.php";
 ?>
+<!DOCTYPE html>
+<html lang="fr">
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+<link rel="stylesheet" href="../include/style.css" />
 
+<head>
+    <meta charset="utf-8" />
+    <title>La lune</title>
+</head>
 
 <body>
     <header>
@@ -67,4 +75,15 @@ include "../include/head.php";
         </div>
     </section>
 
-    <?php include "../inlude/footer.php"; ?>
+    <footer>
+        <nav class="navbar navbar-light bg-secondary">
+            <div class="container-fluid">
+                <span class="navbar-text">
+                    &copy;Maya Lennox
+                </span>
+            </div>
+        </nav>
+    </footer>
+</body>
+
+</html>
