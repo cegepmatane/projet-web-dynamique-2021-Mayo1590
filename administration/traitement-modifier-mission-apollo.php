@@ -1,12 +1,17 @@
 <?php
-$fichier_source = $_FILES['image']['tmp'];
+$fichier_source = $_FILES['image']['tmp_name'];
 $racine_serveur = $_SERVER['DOCUMENT_ROOT'];
-$repertoire_projet =  ['/etudiants/2020lennoxm/projet-web-dynamique-2021-Mayo1590/'];
-$repertoire_image = "/image/";
+$repertoire_projet = "etudiants/2020/lennoxm/projet-web-dynamique-2021-Mayo1590";
+$repertoire_image = '/image/';
 $image = $_FILES['image']['name'];
 $fichier_destination = $racine_serveur . $repertoire_projet . $repertoire_image . $image;
 $succes = move_uploaded_file($fichier_source, $fichier_destination);
 
+if ($succes) {
+    echo '<img src="../image/' . $image . '">';
+}
+?>
+<?php
 $id = $_POST['id'];
 $titre = $_POST['titre'];
 $astronautes = $_POST['astronautes'];
@@ -23,8 +28,6 @@ $SQL_MODIFIER_MISSION = "UPDATE `missionsapollo` SET `titre`='" . $titre . "', `
 include "basededonnees.php";
 $requeteModifierMission = $basededonnees->prepare($SQL_MODIFIER_MISSION);
 $reussiteModification = $requeteModifierMission->execute();
-
-if ($succes) echo '<img src="../image/' . $image . '">';
 ?>
 
 <?php

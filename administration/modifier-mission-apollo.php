@@ -11,43 +11,45 @@ $missionApollo = $requeteMissionApollo->fetch();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
-<link rel="stylesheet" href="../include/style.css" />
 
 <head>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../include/style.css" />
+
     <meta charset="utf-8" />
     <title>La lune</title>
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">La lune</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Acueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="../liste-mission-apollo.php">Les missions Apollo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="administration/liste-mission-apollo.php">Panneau admin</a>
-                </li>
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
-                <button class="btn btn-outline-primary" type="submit">Rechercher</button>
-            </form>
-        </div>
-</nav>
-
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">La lune</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Acueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../liste-mission-apollo.php">Les missions Apollo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="administration/liste-mission-apollo.php">Panneau admin</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Rechercher</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
     <header>
-        <h1 class="text-light fw-lighter text-center mx-3 mt-5">Panneau d'administration-Les missions Apollo</h1>
+        <h1 class="fw-lighter text-center mx-3 mt-5">Panneau d'administration-Les missions Apollo</h1>
     </header>
 
     <section id="contenu" class="mt-5 mb-5 mx-3 card">
@@ -72,7 +74,7 @@ $missionApollo = $requeteMissionApollo->fetch();
 
                 <div class="input-group mt-5">
                     <span for="resume" class="input-group-text">Résumé</span>
-                    <input type="text" class="form-control" name="resume" id="resume" value="<?= $missionApollo['resume'] ?>"></input>
+                    <input type="text" class="form-control" name="resume" id="resume" value="<?= $missionApollo['resume'] ?>" />
                 </div>
 
                 <div class="input-group mt-5">
@@ -94,8 +96,8 @@ $missionApollo = $requeteMissionApollo->fetch();
                     <input class="form-control" type="file" id="formFile" value="<?= $missionApollo['image'] ?>" />
                 </div>
 
-                <input type="submit" class="btn btn-primary mt-2" value="Enregistrer" role="button" />
-                <input type="hidden" name="id" value="<?= $missionApollo['id'] ?>">
+                <input type="submit" class="btn btn-primary mt-2" value="Enregistrer" />
+                <input type="hidden" name="id" value="<?= $missionApollo['id'] ?>" />
             </form>
         </div>
     </section>
