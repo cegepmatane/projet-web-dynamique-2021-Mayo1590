@@ -1,18 +1,14 @@
 <?php
-    $id = $_GET['mission'];
+$id = filter_var($_GET['mission'], FILTER_SANITIZE_NUMBER_INT);
 
-    $SQL_SUPPRIMER_MISSION = "DELETE FROM `missionsapollo` WHERE `id`=" .$id;
-
-    include "basededonnees.php";
-    $requeteSupprimerMission = $basededonnees->prepare($SQL_SUPPRIMER_MISSION);
-    $reussite = $requeteSupprimerMission->execute();
+require "../accesseurs/configuration.php";
+require CHEMIN_ACCESSEUR . 'DAO.php';
 ?>
 
 <?php
-if($reussite) 
-{
+if ($reussite) {
 ?>
-	Votre mission a été supprimer dans la base de données.
-<?php	
+    Votre mission a été supprimer dans la base de données.
+<?php
 }
 ?>

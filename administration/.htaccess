@@ -1,0 +1,4 @@
+AuthName "Page d'admdministration protégée"
+AuthType Basic
+AuthUserFile "C:\xampp\htdocs\MDP\.httpasswrd"
+Require valid-user

@@ -1,12 +1,8 @@
 <?php
-$idMissionApollo = $_GET['mission'];
+$idMissionApollo = filter_var($_GET, 'mission', FILTER_SANITIZE_NUMBER_INT);
 
-$MESSAGE_SQL_MISSION_APOLLO = "SELECT * from missionsapollo WHERE id =" . $idMissionApollo;
-
-require "basededonnees.php";
-$requeteMissionApollo = $basededonnees->prepare($MESSAGE_SQL_MISSION_APOLLO);
-$requeteMissionApollo->execute();
-$missionApollo = $requeteMissionApollo->fetch();
+require "accesseurs/configuration.php";
+require CHEMIN_ACCESSEUR . 'DAO.php';
 
 include "include/head.php";
 ?>

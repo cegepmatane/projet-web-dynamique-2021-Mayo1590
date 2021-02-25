@@ -1,4 +1,7 @@
 <?php
+require "../accesseurs/configuration.php";
+require CHEMIN_ACCESSEUR . 'DAO.php';
+
 $fichier_source = $_FILES['image']['tmp_name'];
 $racine_serveur = $_SERVER['DOCUMENT_ROOT'];
 $repertoire_projet = "etudiants/2020/lennoxm/projet-web-dynamique-2021-Mayo1590";
@@ -12,22 +15,16 @@ if ($succes) {
 }
 ?>
 <?php
-$id = $_POST['id'];
-$titre = $_POST['titre'];
-$astronautes = $_POST['astronautes'];
-$date = $_POST['date'];
-$resume = addslashes($_POST['resume']);
-$progres = addslashes($_POST['progres']);
-$reussi = $_POST['reussi'];
-$retour = $_POST['retour'];
-$image = $_POST['image'];
+$id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
+$titre = filter_var($_POST['titre'], FILTER_SANITIZE_STRING);
+$astronautes = filter_var($_POST['astronautes'], FILTER_SANITIZE_STRING);
+$date = filter_var($_POST['date'], FILTER_SANITIZE_STRING);
+$resume = addslashes(filter_var($_POST['resume'], FILTER_SANITIZE_STRING));
+$progres = addslashes(filter_var($_POST['progres'], FILTER_SANITIZE_STRING));
+$reussi = addslashes(filter_var($_POST['reussi'], FILTER_SANITIZE_STRING));
+$retour = filter_var($_POST['retour'], FILTER_SANITIZE_STRING);
 
-
-$SQL_MODIFIER_MISSION = "UPDATE `missionsapollo` SET `titre`='" . $titre . "', `astronautes`='" . $astronautes . "', `date`='" . $date . "', `resume`='" . $resume . "', `progres`='" . $progres . "', `reussi`='" . $reussi . "', `retour`='" . $retour . "' WHERE `id`=" . $id;
-
-include "basededonnees.php";
-$requeteModifierMission = $basededonnees->prepare($SQL_MODIFIER_MISSION);
-$reussiteModification = $requeteModifierMission->execute();
+$reussiteAjout = MissionApolloDAO::modifierMissionApollo();
 ?>
 
 <?php

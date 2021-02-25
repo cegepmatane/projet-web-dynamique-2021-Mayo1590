@@ -1,12 +1,6 @@
 <?php
-include "basededonnees.php";
-
-$MESSAGE_SQL_LISTE_MISSION_APOLLO = "SELECT id, titre, astronautes, date, image from missionsapollo";
-//echo $MESSAGE_SQL_LISTE_MISSION_APOLLO;
-
-$requeteListeMissionApollo = $basededonnees->prepare($MESSAGE_SQL_LISTE_MISSION_APOLLO);
-$requeteListeMissionApollo->execute();
-$listeMissionApollo = $requeteListeMissionApollo->fetchAll();
+require "accesseurs/configuration.php";
+require CHEMIN_ACCESSEUR . "DAO.php";
 
 include "include/head.php";
 ?>
