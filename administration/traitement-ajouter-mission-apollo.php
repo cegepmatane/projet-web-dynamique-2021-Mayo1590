@@ -10,6 +10,8 @@ $image = $_FILES['image']['name'];
 $fichier_destination = $racine_serveur . $repertoire_projet . $repertoire_image . $image;
 $succes = move_uploaded_file($fichier_source, $fichier_destination);
 
+$listeMissionApollo = MissionApolloDAO::ajouterMissionApollo();
+
 if ($succes) {
     echo '<img src="../image/' . $image . '">';
 }

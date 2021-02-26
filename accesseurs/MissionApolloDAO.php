@@ -17,7 +17,6 @@ class MissionApolloDAO
     {
         $MESSAGE_SQL_MISSION_APOLLO = "SELECT * from missionsapollo WHERE id = :id";
 
-        require "basededonnees.php";
         $requeteMissionApollo = BaseDeDonnees::getConnection()->prepare($MESSAGE_SQL_MISSION_APOLLO);
         $requeteMissionApollo->bindParam(':id', $idMissionApollo, PDO::PARAM_INT);
         $requeteMissionApollo->execute();
