@@ -1,11 +1,12 @@
 <?php
-$idMissionApollo = filter_var($_GET, 'mission', FILTER_SANITIZE_NUMBER_INT);
 
-require "accesseurs/configuration.php";
-require CHEMIN_ACCESSEUR . 'DAO.php';
+require "configuration.php";
+require CHEMIN_ACCESSEUR . 'MissionApolloDAO.php';
+
+$idMissionApollo = filter_var($_GET['mission'], FILTER_SANITIZE_NUMBER_INT);
 
 include "include/head.php";
-$listeMissionApollo = MissionApolloDAO::lireMissionApollo();
+$listeMissionApollo = MissionApolloDAO::lireMissionApollo($idMissionApollo);
 ?>
 
 <section>

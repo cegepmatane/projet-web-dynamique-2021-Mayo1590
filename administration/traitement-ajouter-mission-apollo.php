@@ -1,6 +1,6 @@
 <?php
-require "../accesseurs/configuration.php";
-require CHEMIN_ACCESSEUR . 'DAO.php';
+require "../configuration.php";
+require CHEMIN_ACCESSEUR . 'MissionApolloDAO.php';
 
 $fichier_source = $_FILES['image']['tmp_name'];
 $racine_serveur = $_SERVER['DOCUMENT_ROOT'];

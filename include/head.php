@@ -25,7 +25,7 @@
                         <a class="nav-link active" href="liste-mission-apollo.php">Les missions Apollo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="administration/liste-mission-apollo.php">Panneau admin</a>
+                        <a class="nav-link active" href=""></a>
                     </li>
                 </ul>
                 <form class="d-flex">

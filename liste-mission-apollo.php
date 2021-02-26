@@ -1,6 +1,6 @@
 <?php
-require "accesseurs/configuration.php";
-require CHEMIN_ACCESSEUR . "DAO.php";
+require "configuration.php";
+require CHEMIN_ACCESSEUR . "MissionApolloDAO.php";
 
 include "include/head.php";
 $listeMissionApollo = MissionApolloDAO::listerMissionApollo();

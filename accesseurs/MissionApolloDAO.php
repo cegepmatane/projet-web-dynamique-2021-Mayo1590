@@ -13,7 +13,7 @@ class MissionApolloDAO
         return $listeMissionApollo;
     }
 
-    public static function lireMissionApollo()
+    public static function lireMissionApollo($idMissionApollo)
     {
         $MESSAGE_SQL_MISSION_APOLLO = "SELECT * from missionsapollo WHERE id = :id";
 
@@ -46,7 +46,6 @@ class MissionApolloDAO
     {
         $SQL_AJOUTER_MISSION = "INSERT INTO missionsapollo (titre, astronautes, date, resume, progres, reussi, retour, image) VALUES( :titre, :astronautes, :date, :resume, :progres, :reussi, :retour, :image)";
 
-        include "basededonnees.php";
         $requeteAjouterMission = BaseDeDonnees::getConnection()->prepare($SQL_AJOUTER_MISSION);
         $requeteAjouterMission->bindParam(':titre', $titre, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':astronautes', $astronautes, PDO::PARAM_STR);
@@ -56,7 +55,7 @@ class MissionApolloDAO
         $requeteAjouterMission->bindParam(':reussi', $reussi, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':retour', $retrour, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':image', $image, PDO::PARAM_STR);
-        $reussiteModification = $requeteModifierMission->execute();
+        $reussiteModification = $requeteAjouterMission->execute();
 
         return $reussiteModification;
     }
@@ -65,8 +64,7 @@ class MissionApolloDAO
     {
         $SQL_SUPPRIMER_MISSION = "DELETE FROM `missionsapollo` WHERE `id`= :id";
 
-        include "basededonnees.php";
-        $requetesupprimerMission = BaseDeDonnees::getConnection()->prepare($SQL_SUPPRIMER_MISSION);
+        $requeteSupprimerMission = BaseDeDonnees::getConnection()->prepare($SQL_SUPPRIMER_MISSION);
         $reussite = $requeteSupprimerMission->execute();
 
         return $reussite;
