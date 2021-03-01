@@ -10,7 +10,7 @@ $image = $_FILES['image']['name'];
 $fichier_destination = $racine_serveur . $repertoire_projet . $repertoire_image . $image;
 $succes = move_uploaded_file($fichier_source, $fichier_destination);
 
-$listeMissionApollo = MissionApolloDAO::ajouterMissionApollo();
+
 
 if ($succes) {
     echo '<img src="../image/' . $image . '">';
@@ -26,7 +26,7 @@ $progres = addslashes(filter_var($_POST['progres'], FILTER_SANITIZE_STRING));
 $reussi = addslashes(filter_var($_POST['reussi'], FILTER_SANITIZE_STRING));
 $retrour = filter_var($_POST['retour'], FILTER_SANITIZE_STRING);
 
-$reussiteAjout = MissionApolloDAO::ajouterMissionApollo();
+$reussiteAjout = MissionApolloDAO::ajouterMissionApollo($titre, $astronautes, $date, $resume, $progres, $reussi, $retrour);
 ?>
 
 <?php

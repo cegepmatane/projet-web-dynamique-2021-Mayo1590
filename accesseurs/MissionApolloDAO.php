@@ -25,13 +25,13 @@ class MissionApolloDAO
         return $missionApollo;
     }
 
-    public static function ajouterMissionApollo()
+    public static function ajouterMissionApollo($titre, $astronautes, $date, $resume, $progres, $reussi, $retrour)
     {
         $SQL_AJOUTER_MISSION = "INSERT INTO missionsapollo (titre, astronautes, date, resume, progres, reussi, retour, image) VALUES( :titre, :astronautes, :date, :resume, :progres, :reussi, :retour, :image)";
         $requeteAjouterMission = BaseDeDonnees::getConnection()->prepare($SQL_AJOUTER_MISSION);
         $requeteAjouterMission->bindParam(':titre', $titre, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':astronautes', $astronautes, PDO::PARAM_STR);
-        $requeteAjouterMission->bindParam(':date', $date, PDO::PARAM_INT);
+        $requeteAjouterMission->bindParam(':date', $date, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':resume', $resume, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':progres', $progres, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':reussi', $reussi, PDO::PARAM_STR);
@@ -42,14 +42,14 @@ class MissionApolloDAO
         return $reussiteAjout;
     }
 
-    public static function modifierMissionApollo()
+    public static function modifierMissionApollo($titre, $astronautes, $date, $resume, $progres, $reussi, $retrour)
     {
         $SQL_AJOUTER_MISSION = "INSERT INTO missionsapollo (titre, astronautes, date, resume, progres, reussi, retour, image) VALUES( :titre, :astronautes, :date, :resume, :progres, :reussi, :retour, :image)";
 
         $requeteAjouterMission = BaseDeDonnees::getConnection()->prepare($SQL_AJOUTER_MISSION);
         $requeteAjouterMission->bindParam(':titre', $titre, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':astronautes', $astronautes, PDO::PARAM_STR);
-        $requeteAjouterMission->bindParam(':date', $date, PDO::PARAM_INT);
+        $requeteAjouterMission->bindParam(':date', $date, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':resume', $resume, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':progres', $progres, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':reussi', $reussi, PDO::PARAM_STR);
@@ -60,11 +60,12 @@ class MissionApolloDAO
         return $reussiteModification;
     }
 
-    public static function supprimerMissionApollo()
+    public static function supprimerMissionApollo($id)
     {
         $SQL_SUPPRIMER_MISSION = "DELETE FROM `missionsapollo` WHERE `id`= :id";
 
         $requeteSupprimerMission = BaseDeDonnees::getConnection()->prepare($SQL_SUPPRIMER_MISSION);
+        $requeteSupprimerMission->bindParam(':id', $id, PDO::PARAM_INT);
         $reussite = $requeteSupprimerMission->execute();
 
         return $reussite;

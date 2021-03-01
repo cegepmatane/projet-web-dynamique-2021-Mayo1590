@@ -6,7 +6,7 @@ require CHEMIN_ACCESSEUR . 'MissionApolloDAO.php';
 $idMissionApollo = filter_var($_GET['mission'], FILTER_SANITIZE_NUMBER_INT);
 
 include "include/head.php";
-$listeMissionApollo = MissionApolloDAO::lireMissionApollo($idMissionApollo);
+$missionApollo = MissionApolloDAO::lireMissionApollo($idMissionApollo);
 ?>
 
 <section>

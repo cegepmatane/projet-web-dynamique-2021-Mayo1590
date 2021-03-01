@@ -1,5 +1,5 @@
 <?php
-$noMission = filter_input($_GET, 'mission', FILTER_SANITIZE_NUMBER_INT);
+$noMission = filter_input($_GET['mission'], FILTER_SANITIZE_NUMBER_INT);
 
 $SQL_MISSION_APOLLO = "SELECT * FROM `missionsapollo` WHERE `id` = :id";
 

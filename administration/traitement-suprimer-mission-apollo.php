@@ -4,7 +4,7 @@ $id = filter_var($_GET['mission'], FILTER_SANITIZE_NUMBER_INT);
 require "../configuration.php";
 require CHEMIN_ACCESSEUR . 'MissionApolloDAO.php';
 
-$listeMissionApollo = MissionApolloDAO::supprimerMissionApollo();
+$reussite = MissionApolloDAO::supprimerMissionApollo($id);
 ?>
 
 <?php
