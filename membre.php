@@ -6,7 +6,6 @@ include "include/head.php";
 ?>
 
 <section>
-    <h1>La lune</h1>
     <div id="bienvenue-membre">
         <?php
         if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseudonyme'])) {
@@ -24,12 +23,12 @@ include "include/head.php";
 </section>
 
 <section>
-    <h2>Membre</h2>
+    <h1 class="mt-5 text-light text-center fw-lighter">Page membre</h1>
     <?php
     if (empty($_SESSION['membre']['pseudonyme'])) {
-        include_once "membre/formulaire-membre-autentification.php";
+        include_once "membre/formulaire-membre-authentification.php";
         echo '<div>
-                    <a class="btn btn-primary btn-lg mt-2" href="membre/inscription-identification.php" role="button">Créer un compte membre</a>
+                    <a class="btn btn-primary mt-5 mb-5" href="membre/inscription-identification.php" role="button">Créer un compte</a>
               </div>';
     } else {
         $membre = MembreDAO::lireMembre($_SESSION['membre']['pseudonyme']);

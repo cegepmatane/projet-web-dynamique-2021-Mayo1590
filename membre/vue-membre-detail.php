@@ -21,3 +21,8 @@ include "include/head.php"
     <label>Nom</label>
     <span><?= $membre['nom'] ?></span>
 </div>
+
+<div id="membre-organisation">
+    <label>Organisation</label>
+    <span><?= $membre['organisation'] ?><span>
+</div>
