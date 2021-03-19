@@ -1,4 +1,4 @@
 AuthName "Page d'admdministration protégée"
 AuthType Basic
-AuthUserFile "C:\xampp\htdocs\MDP\.htpasswd"
+AuthUserFile "etudiants/2020/lennoxm/projet-web-dynamique-2021-Mayo1590"
 Require valid-user
