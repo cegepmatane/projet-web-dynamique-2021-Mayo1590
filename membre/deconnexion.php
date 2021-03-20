@@ -8,5 +8,5 @@ if (isset($_SESSION['membre']['pseudonyme'])) {
 
     header('location: ../membre.php');
 } else {
-    echo "Vous n'êtes âs connecté !";
+    echo "Vous n'êtes pas connecté !";
 }

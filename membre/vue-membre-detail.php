@@ -1,5 +1,5 @@
 <?php
-include "include/head.php"
+include "include/head-membreS.php"
 ?>
 
 <div id="membre-pseudonyme">

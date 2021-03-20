@@ -1,4 +1,4 @@
 AuthName "Page d'admdministration protégée"
 AuthType Basic
-AuthUserFile "etudiants/2020/lennoxm/projet-web-dynamique-2021-Mayo1590"
+AuthUserFile "home/tiweb/public_html/etudiants/2020/lennoxm/projet-web-dynamique-2021-Mayo1590/MDP/.httpassw/"
 Require valid-user

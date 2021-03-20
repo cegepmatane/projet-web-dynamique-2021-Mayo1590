@@ -1,9 +1,9 @@
 <?php
-include "../include/head.php"
+include "../include/head-membre.php"
 ?>
 
 <section id="contenu">
-    <h2 class="mt-5 text-light text-center fw-lighter">Inscription d'un membre - Avater 3/3</h2>
+    <h2 class="mt-5 text-light text-center fw-lighter">Inscription d'un membre - Avatar 3/3</h2>
 
     <form method="post" class="mx-2 mt-5 text-center" action="traitement.php">
 

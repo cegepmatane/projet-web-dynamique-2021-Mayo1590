@@ -26,4 +26,43 @@ class MembreDAO
 
         return $membre;
     }
+
+    public static function enregistrerMembre($nouveauMembre)
+    {
+        $AJOUTER_MEMBRE = "INSERT into membre(prenom, nom, pseudonyme, mdp, courriel, organisation, avatar) VALUES (:prenom, :nom, :pseudonyme, :mdp, :courriel, :organisation, :avatar)";
+
+        $requeteAjouterMemebre = BaseDeDonnees::getConnection()->prepare($AJOUTER_MEMBRE);
+        $requeteAjouterMemebre->bindParam(':prenom', $nouveauMembre['prenom'], PDO::PARAM_STR);
+        $requeteAjouterMemebre->bindParam(':nom', $nouveauMembre['nom'], PDO::PARAM_STR);
+        $requeteAjouterMemebre->bindParam(':pseudonyme', $nouveauMembre['pseudonyme'], PDO::PARAM_STR);
+        $requeteAjouterMemebre->bindParam(':courriel', $nouveauMembre['courriel'], PDO::PARAM_STR);
+        $requeteAjouterMemebre->bindParam(':organisation', $nouveauMembre['organisation'], PDO::PARAM_STR);
+        $requeteAjouterMemebre->bindParam(':mdp', $nouveauMembre['mdp'], PDO::PARAM_STR);
+
+        $reussiteInscription = $requeteAjouterMemebre->execute();
+
+        return $reussiteInscription;
+    }
+
+    public static function trouverCourriel($user)
+    {
+        $TROUVER_COURRIEL = "SELECT id FROM membre WHERE courriel = :courriel";
+        $requete = BaseDeDonnees::getConnection()->prepare($TROUVER_COURRIEL);
+        $requete->bindParam(':courriel', $user, PDO::PARAM_STR);
+        $requete->execute();
+        $membre = $requete->fetch();
+
+        return $membre;
+    }
+
+    public static function trouverPseudonyme($user)
+    {
+        $TROUVER_PSEUDO = "SELECT id FROM membre WHERE pseudonyme = :pseudonyme";
+        $requete = BaseDeDonnees::getConnection()->prepare($TROUVER_PSEUDO);
+        $requete->bindParam(':pseudonyme', $user, PDO::PARAM_STR);
+        $requete->execute();
+        $membre = $requete->fetch();
+
+        return $membre;
+    }
 }

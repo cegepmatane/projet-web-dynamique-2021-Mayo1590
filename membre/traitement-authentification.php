@@ -14,8 +14,11 @@ if (isset($_POST['membre-authetification'])) {
         $_SESSION['membre']['pseudonyme'] = $membreTrouve['pseudonyme'];
         $_SESSION['membre']['prenom'] = $membreTrouve['prenom'];
         $_SESSION['membre']['nom'] = $membreTrouve['nom'];
+        $_SESSION['membre']['courriel'] = $membreTrouve['courriel'];
+        $_SESSION['membre']['organisation'] = $membreTrouve['organisation'];
+        $_SESSION['membre']['avatar'] = $membreTrouve['avatar'];
 
-        header('Location: ../membre.php');
+        header('Location: ../index.php');
     } else {
         $_SESSION['erreur'] = "Votre pseudonyme ou votre mot de passe est invalide";
         header('Location: ../membre.php');

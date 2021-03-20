@@ -1,4 +1,6 @@
 <?php
+
+require "configuration.php";
 include "include/head.php"
 ?>
 
@@ -12,6 +14,15 @@ include "include/head.php"
         </div>
     </div>
 </form>
+
+<div id="bienvenue">
+    <?php
+    if (!empty($SESSION['membre'])) {
+    ?> Bonjour <?php echo $_SESSION['membre']['pseudonyme'] . "!";
+                echo $_SESSION['membre']['avatar'];
+            }
+                ?>
+</div>
 
 <?php
 include "include/footer.php"

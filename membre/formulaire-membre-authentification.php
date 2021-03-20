@@ -10,7 +10,7 @@
         <input type="text" class="form-control" name="mdp" />
     </div>
 
-    <input type="submit" class="btn btn-primary mt-5" name="membre-authentification" value="Se connecter" />
+    <a type="submit" class="btn btn-primary mt-5" name="membre-authentification" href="membre/traitement-authentification.php">Se connecter</a>
 
     <span class="erreur">
         <?php if (!empty($_SESSION['erreur'])) {
