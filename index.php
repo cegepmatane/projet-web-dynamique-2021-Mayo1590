@@ -15,14 +15,22 @@ include "include/head.php"
     </div>
 </form>
 
-<div id="bienvenue">
-    <?php
-    if (!empty($SESSION['membre'])) {
-    ?> Bonjour <?php echo $_SESSION['membre']['pseudonyme'] . "!";
-                echo $_SESSION['membre']['avatar'];
-            }
-                ?>
-</div>
+<section class="mx-2  mb-5 text-light">
+    <div id="bienvenue-membre">
+        <?php
+        if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseudonyme'])) {
+        ?> <h5>Bonjour <?= $_SESSION['membre']['pseudonyme'] . "!</h5>";
+
+                        echo '<div>
+                    <a class="btn btn-primary btn-lg mt-2" href="membre/modifier-compte.php" role="button">Modifier compte</a>
+                </div>';
+                        echo '<div>
+                    <a class="btn btn-primary btn-lg mt-2" href="membre/deconnexion.php" role="button">Se déconnecter</a>
+                </div>';
+                    }
+                        ?>
+    </div>
+</section>
 
 <?php
 include "include/footer.php"

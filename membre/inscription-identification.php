@@ -4,7 +4,7 @@ include "../include/head-membre.php"
 ?>
 
 <section id="contenu">
-    <h2 class="mt-5 text-light text-center fw-lighter">Inscription d'un membre - Identification 1/3</h2>
+    <h2 class="mt-5 text-light text-center fw-lighter">Inscription d'un membre - Identification 1/2</h2>
 
     <?php if (!empty($_SESSION['erreur'])) {
         echo $_SESSION['erreur'];
@@ -34,7 +34,7 @@ include "../include/head-membre.php"
             <input type="text" class="form-control" name="courriel" />
         </div>
 
-        <input type="submit" class="btn btn-primary mt-5 mb-5" name="membre-authentification" value="Suivant" />
+        <input type="submit" class="btn btn-primary mt-5 mb-5" name="inscription-identification" value="Suivant" />
     </form>
 
 </section>

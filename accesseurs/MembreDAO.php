@@ -8,7 +8,7 @@ class MembreDAO
         $SQL_AUTHENTIFICATION = "SELECT * FROM membre WHERE pseudonyme = :pseudonyme";
 
         $requeteAuthentification = BaseDeDonnees::getConnection()->prepare($SQL_AUTHENTIFICATION);
-        $requeteAuthentification->bindParam(':pseudonyme', $pseudonyme, PDO::PARAM_STR);
+        $requeteAuthentification->bindParam(':pseudonyme', $membre['pseudonyme'], PDO::PARAM_STR);
         $requeteAuthentification->execute();
         $membreTrouve = $requeteAuthentification->fetch();
 
@@ -38,6 +38,7 @@ class MembreDAO
         $requeteAjouterMemebre->bindParam(':courriel', $nouveauMembre['courriel'], PDO::PARAM_STR);
         $requeteAjouterMemebre->bindParam(':organisation', $nouveauMembre['organisation'], PDO::PARAM_STR);
         $requeteAjouterMemebre->bindParam(':mdp', $nouveauMembre['mdp'], PDO::PARAM_STR);
+        $requeteAjouterMemebre->bindParam(':avatar', $_SESSION['membre']['avatar'], PDO::PARAM_STR);
 
         $reussiteInscription = $requeteAjouterMemebre->execute();
 
@@ -46,7 +47,7 @@ class MembreDAO
 
     public static function trouverCourriel($user)
     {
-        $TROUVER_COURRIEL = "SELECT id FROM membre WHERE courriel = :courriel";
+        $TROUVER_COURRIEL = "SELECT id_membre FROM membre WHERE courriel = :courriel";
         $requete = BaseDeDonnees::getConnection()->prepare($TROUVER_COURRIEL);
         $requete->bindParam(':courriel', $user, PDO::PARAM_STR);
         $requete->execute();
@@ -57,7 +58,7 @@ class MembreDAO
 
     public static function trouverPseudonyme($user)
     {
-        $TROUVER_PSEUDO = "SELECT id FROM membre WHERE pseudonyme = :pseudonyme";
+        $TROUVER_PSEUDO = "SELECT id_membre FROM membre WHERE pseudonyme = :pseudonyme";
         $requete = BaseDeDonnees::getConnection()->prepare($TROUVER_PSEUDO);
         $requete->bindParam(':pseudonyme', $user, PDO::PARAM_STR);
         $requete->execute();
