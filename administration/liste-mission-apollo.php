@@ -23,7 +23,7 @@ $listeMissionApollo = $requeteListeMissionApollo->fetchAll();
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">La lune</a>
+            <a class="navbar-brand" href="../index.php">La lune</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,10 +33,13 @@ $listeMissionApollo = $requeteListeMissionApollo->fetchAll();
                         <a class="nav-link active" aria-current="page" href="index.php">Acueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="liste-mission-apollo.php">Les missions Apollo</a>
+                        <a class="nav-link active" href="../liste-mission-apollo.php">Les missions Apollo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="membre.php">Page membre</a>
+                        <a class="nav-link active" href="../membre.php">Page membre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../recherche-avancee.php">Recherche avancée</a>
                     </li>
                 </ul>
                 <form class="d-flex">

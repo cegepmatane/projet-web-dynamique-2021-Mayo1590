@@ -22,3 +22,8 @@
     <label>Organisation : </label>
     <span><?= $membre['organisation'] ?></span>
 </div>
+
+<div id="membre-avatar" class="text-light mx-2 mb-5">
+    <label>Avatar : </label>
+    <img src="image/<?= $membre['avatar'] ?>" alt="avatar" class="avatar" />
+</div>

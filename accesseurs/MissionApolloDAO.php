@@ -70,4 +70,60 @@ class MissionApolloDAO
 
         return $reussite;
     }
+
+    public static function rechercherMissionApollo()
+    {
+        $recherche = filter_var($_GET['recherche'], FILTER_SANITIZE_STRING);
+        $SQL_RECHERCHE_RAPIDE = "SELECT * FROM missionsapollo WHERE titre LIKE '%$recherche%' OR resume LIKE '%$recherche%' OR date LIKE '%$recherche%' OR astronautes LIKE '%$recherche%' OR progres LIKE '%$recherche%' OR reussi LIKE '%$recherche%' OR retour LIKE '%$recherche%'";
+        $requeteRechercheRapide = BaseDeDonnees::getConnection()->prepare($SQL_RECHERCHE_RAPIDE);
+        $requeteRechercheRapide->execute();
+        $resultat = $requeteRechercheRapide->fetchAll();
+
+        return $resultat;
+    }
+
+    public static function rechercherAvanceeMissionApollo()
+    {
+        $titreRecherche = filter_var($_GET['recherche-titre'], FILTER_SANITIZE_STRING);
+        $astronautesRecherche = filter_var($_GET['recherche-astronautes'], FILTER_SANITIZE_STRING);
+        $dateRecherche = filter_var($_GET['recherche-date'], FILTER_SANITIZE_STRING);
+        $resumeRecherche = filter_var($_GET['recherche-resume'], FILTER_SANITIZE_STRING);
+        $progresRecherche = filter_var($_GET['recherche-progres'], FILTER_SANITIZE_STRING);
+        $reussiRecherche = filter_var($_GET['recherche-reussi'], FILTER_SANITIZE_STRING);
+        $retourRecherche = filter_var($_GET['recherche-retour'], FILTER_SANITIZE_STRING);
+
+        if (!empty($titreRecherche) || !empty($astronautesRecherche) || !empty($dateRecherche) || !empty($resumeRecherche) || !empty($progresRecherche)) {
+            $SQL_RECHERCHE_AVANCEE = "SELECT * FROM missionsapollo WHERE 1 = 1 ";
+
+            if (!empty($titreRecherche)) {
+                $SQL_RECHERCHE_AVANCEE = $SQL_RECHERCHE_AVANCEE . " AND titre like '%$titreRecherche%'";
+            }
+
+            if (!empty($astronautesRecherche)) {
+                $SQL_RECHERCHE_AVANCEE = $SQL_RECHERCHE_AVANCEE . " AND astronautes like '%$astronautesRecherche%'";
+            }
+
+            if (!empty($dateRecherche)) {
+                $SQL_RECHERCHE_AVANCEE = $SQL_RECHERCHE_AVANCEE . " AND date like '%$dateRecherche%'";
+            }
+
+            if (!empty($resumeRecherche)) {
+                $SQL_RECHERCHE_AVANCEE = $SQL_RECHERCHE_AVANCEE . " AND resume like '%$resumeRecherche%'";
+            }
+            if (!empty($progresRecherche)) {
+                $SQL_RECHERCHE_AVANCEE = $SQL_RECHERCHE_AVANCEE . " AND progres like '%$progresRecherche%'";
+            }
+            if (!empty($reussiRecherche)) {
+                $SQL_RECHERCHE_AVANCEE = $SQL_RECHERCHE_AVANCEE . " AND reussi like '%$reussiRecherche%'";
+            }
+            if (!empty($retourRecherche)) {
+                $SQL_RECHERCHE_AVANCEE = $SQL_RECHERCHE_AVANCEE . " AND reussi like '%$retourRecherche%'";
+            }
+            $requeteRecherche = BaseDeDonnees::getConnection()->prepare($SQL_RECHERCHE_AVANCEE);
+            $requeteRecherche->execute();
+            $resultat = $requeteRecherche->fetchAll();
+        }
+
+        return $resultat;
+    }
 }

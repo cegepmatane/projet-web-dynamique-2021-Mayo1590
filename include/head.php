@@ -27,6 +27,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="membre.php">Page membre</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="recherche-avancee.php">Recherche avancée</a>
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
