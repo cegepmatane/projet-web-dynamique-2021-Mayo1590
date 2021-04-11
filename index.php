@@ -42,8 +42,8 @@ include "include/head.php"
                     }
                         ?>
     </div>
+    <a href="https://tiweb.cgmatane.qc.ca/etudiants/2020/lennoxm/projet-web-dynamique-2021-Mayo1590/rss.php/"><img src="image/rss-icone.png" alt="logo rss"></a>
 </section>
-
 
 
 <?php
