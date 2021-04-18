@@ -28,6 +28,8 @@ $listeMissionApollo = MissionApolloDAO::listerMissionApollo();
         }
         ?>
     </div>
+
+    <a class="btn btn-primary mt-2 mx-2 mb-5" href="liste-mission-exel.php" role="button">Exporter la liste vers Excel</a>
 </section>
 
 <?php include "include/footer.php"; ?>

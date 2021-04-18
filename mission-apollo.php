@@ -26,6 +26,7 @@ $missionApollo = MissionApolloDAO::lireMissionApollo($idMissionApollo);
         </div>
     </div>
 
+    <a class="btn btn-primary mt-2 mx-2 mb-5" href="mission-pdf.php?mission=<?= $idMissionApollo ?>" role="button">Exporter la liste vers un format PDF</a>
 </section>
 
 <?php
