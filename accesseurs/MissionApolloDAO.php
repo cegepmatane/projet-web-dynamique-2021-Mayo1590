@@ -25,7 +25,7 @@ class MissionApolloDAO
         return $missionApollo;
     }
 
-    public static function ajouterMissionApollo($titre, $astronautes, $date, $resume, $progres, $reussi, $retrour)
+    public static function ajouterMissionApollo($titre, $astronautes, $date, $resume, $progres, $reussi, $retrour, $image)
     {
         $SQL_AJOUTER_MISSION = "INSERT INTO missionsapollo (titre, astronautes, date, resume, progres, reussi, retour, image) VALUES( :titre, :astronautes, :date, :resume, :progres, :reussi, :retour, :image)";
         $requeteAjouterMission = BaseDeDonnees::getConnection()->prepare($SQL_AJOUTER_MISSION);
