@@ -4,6 +4,9 @@ require CHEMIN_ACCESSEUR . "MissionApolloDAO.php";
 
 include "include/head.php";
 $listeMissionApollo = MissionApolloDAO::listerMissionApollo();
+
+require CHEMIN_ACCESSEUR . "ClicDAO.php";
+ClicDAO::enregistrerVisite($_SERVER);
 ?>
 
 <section>

@@ -1,7 +1,10 @@
 <?php
 
 require "configuration.php";
-include "include/head.php"
+include "include/head.php";
+
+require CHEMIN_ACCESSEUR . "ClicDAO.php";
+ClicDAO::enregistrerVisite($_SERVER);
 ?>
 
 <h1 class="mt-5 text-light text-center fw-lighter">La lune</h1>

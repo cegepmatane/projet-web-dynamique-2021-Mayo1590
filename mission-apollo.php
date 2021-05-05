@@ -7,6 +7,9 @@ $idMissionApollo = filter_var($_GET['mission'], FILTER_SANITIZE_NUMBER_INT);
 
 include "include/head.php";
 $missionApollo = MissionApolloDAO::lireMissionApollo($idMissionApollo);
+
+require CHEMIN_ACCESSEUR . "ClicDAO.php";
+ClicDAO::enregistrerVisite($_SERVER);
 ?>
 
 <section>

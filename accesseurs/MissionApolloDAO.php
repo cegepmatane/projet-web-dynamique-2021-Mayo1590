@@ -126,4 +126,14 @@ class MissionApolloDAO
 
         return $resultat;
     }
+
+    public static function listerCategories()
+    {
+        $MESSAGE_LISTER_CATEGORIE = "SELECT categorie,COUNT(*) as nombre,AVG(temps) as nombresJoursMoyen,SUM(temps) as nombresJoursTotals,MAX(temps) as nombresJoursMax,MIN(temps) as nombresJoursMin FROM missionsapollo GROUP BY categorie";
+        $requeteCategorie = BaseDeDonnees::getConnection()->prepare($MESSAGE_LISTER_CATEGORIE);
+        $requeteCategorie->execute();
+        $categories = $requeteCategorie->fetchAll();
+
+        return $categories;
+    }
 }
