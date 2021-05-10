@@ -9,11 +9,12 @@ $listeCategorie = MissionApolloDAO::listerCategories();
 <html lang="fr">
 
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../include/style.css" />
     <meta charset="utf-8" />
-    <title>La lune</title>
+    <title>Dashboard</title>
 </head>
 
 <body>
@@ -72,16 +73,48 @@ $listeCategorie = MissionApolloDAO::listerCategories();
                 <tr>
                     <th scope="row"><?= $categorie['categorie'] ?></th>
                     <td><?= $categorie['nombre'] ?></td>
-                    <td><?= floor($categorie['NombresJoursMoyen']) ?></td>
-                    <td><?= $categorie['NombresJoursTotals'] ?></td>
-                    <td><?= $categorie['NombresJoursMax'] ?></td>
-                    <td><?= $categorie['NombresJoursMin'] ?></td>
+                    <td><?= floor($categorie['nombresJoursMoyen']) ?></td>
+                    <td><?= $categorie['nombresJoursTotals'] ?></td>
+                    <td><?= $categorie['nombresJoursMax'] ?></td>
+                    <td><?= $categorie['nombresJoursMin'] ?></td>
                 </tr>
             </tbody>
         <?php
         }
         ?>
     </table>
+
+    <div class="chart-container mx-2 mb-5 mt-5">
+        <canvas id="graphique"></canvas>
+    </div>
+
+    <script>
+        <?php
+        foreach ($listeCategorie as $categorie) {
+            $categories[] = "\"" . $categorie['categorie'] . "\"";
+            $nombreParCategorie[] = $categorie['nombre'];
+        }
+        ?>
+        const donnees = [<?php echo implode(',', $nombreParCategorie); ?>];
+        const etiquettes = [<?php echo implode(',', $categories); ?>];
+        const couleurs = ['red', 'blue', 'orange'];
+
+        const cible = document.getElementById('graphique');
+        const graphiqueTarte = new Chart(cible, {
+            type: 'pie',
+            data: {
+                labels: etiquettes,
+                datasets: [{
+                    label: 'Contenu par catégorie',
+                    data: donnees,
+                    backgroundColor: couleurs
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
 
     <footer>
         <nav class="navbar navbar-light bg-secondary">

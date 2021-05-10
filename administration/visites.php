@@ -11,11 +11,12 @@ $listePArLangue = ClicDAO::listerStatsParLangue();
 <html lang="fr">
 
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../include/style.css" />
     <meta charset="utf-8" />
-    <title>La lune</title>
+    <title>Dashboard</title>
 </head>
 
 <body>
@@ -103,6 +104,38 @@ $listePArLangue = ClicDAO::listerStatsParLangue();
         }
         ?>
     </table>
+
+    <div class="chart-container mx-2 mb-5 mt-5">
+        <canvas id="graphique-jour"></canvas>
+    </div>
+
+    <script>
+        <?php
+        foreach ($listePArJour as $jourEnregistrer) {
+            $jour[] = "\"" . $joursDeLaSemaine[$jourEnregistrer['jour'] - 1] . "\"";
+            $nombreVisitesParJour[] = $jourEnregistrer['visites'];
+        }
+        ?>
+        const donnees = [<?php echo implode(',', $nombreVisitesParJour); ?>];
+        const etiquettes = [<?php echo implode(',', $jour); ?>];
+
+        const cible = document.getElementById('graphique-jour').getContext('2d');
+        const graphiqueLigne = new Chart(cible, {
+            type: 'line',
+            data: {
+                labels: etiquettes,
+                datasets: [{
+                    label: 'Visite par jour',
+                    data: donnees,
+                    backgroundColor: 'grey',
+                    borderColor: 'blue'
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
 
     <footer>
         <nav class="navbar navbar-light bg-secondary">
