@@ -4,6 +4,7 @@ include "../configuration.php";
 
 require CHEMIN_ACCESSEUR . "MissionApolloDAO.php";
 $listeCategorie = MissionApolloDAO::listerCategories();
+$contenu = MissionApolloDAO::calculerContenu();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -83,6 +84,17 @@ $listeCategorie = MissionApolloDAO::listerCategories();
         }
         ?>
     </table>
+
+    <div class="mx-2">
+        <?php
+        foreach ($contenu as $contenus) {
+        ?>
+            <p>Durée moyenne des missions: <?= floor($contenus["moyenne"]) . " jours" ?></p>
+            <p>Écart-type: <?= round($contenus["ecartType"], 1) ?></p>
+        <?php
+        }
+        ?>
+    </div>
 
     <div class="chart-container mx-2 mb-5 mt-5">
         <canvas id="graphique"></canvas>

@@ -136,4 +136,14 @@ class MissionApolloDAO
 
         return $categories;
     }
+
+    public static function calculerContenu()
+    {
+        $MESSAGE_CALCULER_CONTENU = "SELECT AVG(temps) as moyenne, STDDEV(temps) as ecartType FROM missionsapollo";
+        $requetePageContenu = BaseDeDonnees::getConnection()->prepare($MESSAGE_CALCULER_CONTENU);
+        $requetePageContenu->execute();
+        $contenu = $requetePageContenu->fetchAll();
+
+        return $contenu;
+    }
 }
