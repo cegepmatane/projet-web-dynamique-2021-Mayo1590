@@ -19,16 +19,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../index.php">Acueil</a>
+                        <a class="nav-link active" aria-current="page" href="index.php">Acueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../liste-mission-apollo.php">Les missions Apollo</a>
+                        <a class="nav-link active" href="liste-mission-apollo.php">Ajouter/modifier mission apollo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../membre.php">Page membre</a>
+                        <a class="nav-link active" href="contenu.php">Contenu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../recherche-avancee.php">Recherche avancée</a>
+                        <a class="nav-link active" href="visites.php">Visites</a>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -46,6 +46,58 @@
             Dashboard
         </h1>
     </header>
+
+    <section class="row mx-3">
+        <div class="card text-center mb-5 mt-5 bg-success col">
+            <img src="../image/liste.jpg" class="card-img-top" alt="liste">
+            <div class="card-body">
+                <h5 class="card-title mb-3">Ajouter/modifier liste mission Apollo</h5>
+                <a href="liste-mission-apollo.php" class="btn btn-light">Voir plus</a>
+            </div>
+        </div>
+
+        <div class="card mx-2 text-center mb-5 mt-5 bg-success col">
+            <img src="../image/pensee.jpg" class="card-img-top" alt="pensée">
+            <div class="card-body">
+                <h5 class="card-title mb-3">Pensée du jour</h5>
+                <a href="#" class="btn btn-light">Voir plus</a>
+            </div>
+        </div>
+
+        <div class="card mx-2 text-center mb-5 mt-5 bg-success col">
+            <img src="../image/contenu.jpg" class="card-img-top" alt="contenu">
+            <div class="card-body">
+                <h5 class="card-title mb-3">Statistiques de contenu</h5>
+                <a href="contenu.php" class="btn btn-light">Voir plus</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="row mx-3">
+        <div class="card text-center mb-5 mt-5 bg-success col">
+            <img src="../image/visite.jpg" class="card-img-top" alt="liste">
+            <div class="card-body">
+                <h5 class="card-title mb-3">Statistiques de visites</h5>
+                <a href="visites.php" class="btn btn-light">Voir plus</a>
+            </div>
+        </div>
+
+        <div class="card mx-2 text-center mb-5 mt-5 bg-success col">
+            <img src="../image/humeur.jpg" class="card-img-top" alt="pensée">
+            <div class="card-body">
+                <h5 class="card-title mb-3">Humeur du jour</h5>
+                <a href="#" class="btn btn-light">Voir plus</a>
+            </div>
+        </div>
+
+        <div class="card mx-2 text-center mb-5 mt-5 bg-success col">
+            <img src="../image/image.jpg" class="card-img-top" alt="contenu">
+            <div class="card-body">
+                <h5 class="card-title mb-3">Image du jour</h5>
+                <a href="#" class="btn btn-light">Voir plus</a>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <nav class="navbar navbar-light bg-secondary">

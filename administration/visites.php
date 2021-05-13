@@ -22,23 +22,23 @@ $listePArLangue = ClicDAO::listerStatsParLangue();
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">La lune</a>
+            <a class="navbar-brand" href="index.php">Dashboard</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../index.php">Acueil</a>
+                        <a class="nav-link active" aria-current="page" href="index.php">Acueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../liste-mission-apollo.php">Les missions Apollo</a>
+                        <a class="nav-link active" href="liste-mission-apollo.php">Ajouter/modifier mission apollo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../membre.php">Page membre</a>
+                        <a class="nav-link active" href="contenu.php">Contenu</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../recherche-avancee.php">Recherche avancée</a>
+                        <a class="nav-link active" href="visites.php">Visites</a>
                     </li>
                 </ul>
                 <form class="d-flex">
