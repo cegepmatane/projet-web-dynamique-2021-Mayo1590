@@ -3,7 +3,7 @@
 require "configuration.php";
 include "include/head.php";
 
-require CHEMIN_ACCESSEUR . "ClicDAO.php";
+require "accesseurs/ClicDAO.php";
 ClicDAO::enregistrerVisite($_SERVER);
 ?>
 
@@ -45,7 +45,7 @@ ClicDAO::enregistrerVisite($_SERVER);
                     }
                         ?>
     </div>
-    <a href="https://tiweb.cgmatane.qc.ca/etudiants/2020/lennoxm/projet-web-dynamique-2021-Mayo1590/rss.php/"><img src="image/rss-icone.png" alt="logo rss"></a>
+    <a href="https://lune.mayalennox.com/rss.php/"><img src="image/rss-icone.png" alt="logo-rss"></a>
 </section>
 
 

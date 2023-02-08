@@ -47,7 +47,7 @@ class MembreDAO
 
     public static function trouverCourriel($user)
     {
-        $TROUVER_COURRIEL = "SELECT id_membre FROM membre WHERE courriel = :courriel";
+        $TROUVER_COURRIEL = "SELECT id FROM membre WHERE courriel = :courriel";
         $requete = BaseDeDonnees::getConnection()->prepare($TROUVER_COURRIEL);
         $requete->bindParam(':courriel', $user, PDO::PARAM_STR);
         $requete->execute();
@@ -58,7 +58,7 @@ class MembreDAO
 
     public static function trouverPseudonyme($user)
     {
-        $TROUVER_PSEUDO = "SELECT id_membre FROM membre WHERE pseudonyme = :pseudonyme";
+        $TROUVER_PSEUDO = "SELECT id FROM membre WHERE pseudonyme = :pseudonyme";
         $requete = BaseDeDonnees::getConnection()->prepare($TROUVER_PSEUDO);
         $requete->bindParam(':pseudonyme', $user, PDO::PARAM_STR);
         $requete->execute();

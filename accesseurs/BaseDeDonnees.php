@@ -17,8 +17,8 @@ class BaseDeDonnees
             $hote = 'localhost';
             $base = 'tiweb_lennoxm';
         } else {
-            $usager = 'root';
-            $motdepasse = '';
+            $usager = 'lune';
+            $motdepasse = 'V!y0j%1hsg';
             $hote = 'localhost';
             $base = 'lune';
         }
@@ -27,7 +27,7 @@ class BaseDeDonnees
         $basededonnees = new PDO($dsn, $usager, $motdepasse);
         // Configurer la gestion d'erreurs
         $basededonnees->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        // La ligne suivante est importante pour empêcher les problèmesd'affichages
+        // La ligne suivante est importante pour empêcher les problèmes d'affichages
         $basededonnees->exec('SET CHARACTER SET UTF8');
 
         return $basededonnees;

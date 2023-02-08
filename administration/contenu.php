@@ -2,10 +2,15 @@
 
 include "../configuration.php";
 
-require CHEMIN_ACCESSEUR . "MissionApolloDAO.php";
+require "../accesseurs/MissionApolloDAO.php";
 $listeCategorie = MissionApolloDAO::listerCategories();
 $contenu = MissionApolloDAO::calculerContenu();
 ?>
+<style>
+    body {
+        background: no-repeat top / cover url("") !important;
+    }
+</style>
 <!DOCTYPE html>
 <html lang="fr">
 

@@ -12,8 +12,8 @@ if ($estSurServeurTim) {
     $hote = 'localhost';
     $base = 'tiweb_lennoxm';
 } else {
-    $usager = 'root';
-    $motdepasse = '';
+    $usager = 'lune';
+    $motdepasse = 'V!y0j%1hsg';
     $hote = 'localhost';
     $base = 'lune';
 }

@@ -1,5 +1,5 @@
 body {
-  background: no-repeat top / cover url("background.jpg");
+  background: no-repeat top / cover url("../image/background.jpg");
 }
 
 .image {

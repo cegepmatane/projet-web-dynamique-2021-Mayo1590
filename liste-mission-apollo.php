@@ -1,11 +1,11 @@
 <?php
 require "configuration.php";
-require CHEMIN_ACCESSEUR . "MissionApolloDAO.php";
+require "accesseurs/MissionApolloDAO.php";
 
 include "include/head.php";
 $listeMissionApollo = MissionApolloDAO::listerMissionApollo();
 
-require CHEMIN_ACCESSEUR . "ClicDAO.php";
+require "accesseurs/ClicDAO.php";
 ClicDAO::enregistrerVisite($_SERVER);
 ?>
 

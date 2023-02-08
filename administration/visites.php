@@ -1,12 +1,19 @@
 <?php
 
 include "../configuration.php";
-require CHEMIN_ACCESSEUR . "ClicDAO.php";
+require "../accesseurs/ClicDAO.php";
 $listePArJour = ClicDAO::listerStatsParJour();
 $joursDeLaSemaine = array("Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi");
 
 $listePArLangue = ClicDAO::listerStatsParLangue();
 ?>
+<!--temp-->
+<style>
+    body {
+        background: no-repeat top / cover url("") !important;
+    }
+</style>
+
 <!DOCTYPE html>
 <html lang="fr">
 

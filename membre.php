@@ -1,6 +1,6 @@
 <?php
 require "configuration.php";
-require CHEMIN_ACCESSEUR . "MembreDAO.php";
+require "accesseurs/MembreDAO.php";
 
 include "include/head.php";
 ?>

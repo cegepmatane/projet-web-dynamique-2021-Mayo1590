@@ -1,7 +1,7 @@
 <?php
 
 require "configuration.php";
-require CHEMIN_ACCESSEUR . "MissionApolloDAO.php";
+require "accesseurs/MissionApolloDAO.php";
 $listeMission = MissionApolloDAO::listerMissionApollo();
 
 header("Content-Type: application/xml; charset=utf-8");
@@ -13,8 +13,8 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'
 
     <channel>
         <title>Liste de missions Apollo</title>
-        <atom:link href="https://tiweb.cgmatane.qc.ca/etudiants/2020/lennoxm/projet-web-dynamique-2021-Mayo1590/rss.php/" rel="self" type="application/rss+xml" />
-        <link>https://tiweb.cgmatane.qc.ca/etudiants/2020/lennoxm/projet-web-dynamique-2021-Mayo1590/index.php</link>
+        <atom:link href="https://lune.mayalennox.com//rss.php/" rel="self" type="application/rss+xml" />
+        <link>https://lune.mayalennox.com//index.php</link>
         <description>Une liste des missions Apollo</description>
         <lastBuildDate>Tue, 19 mar 2021 20:52:40 -0500</lastBuildDate>
         <language>fr-CA</language>
@@ -27,14 +27,14 @@ echo '<?xml version="1.0" encoding="UTF-8"?>'
         ?>
             <item>
                 <title><?= $missionApollo['titre'] ?></title>
-                <link>https://tiweb.cgmatane.qc.ca/etudiants/2020/lennoxm/projet-web-dynamique-2021-Mayo1590?id=<?= $missionApollo['id'] ?></link>
+                <link>https://lune.mayalennox.com/?id=<?= $missionApollo['id'] ?></link>
                 <pubDate>Tue, 19 mar 2021 20:52:40 -0500</pubDate>
                 <category>
                     <![CDATA[Utilisateurs]]>
                 </category>
-                <guid isPermaLink="false">https://tiweb.cgmatane.qc.ca/etudiants/2020/lennoxm/projet-web-dynamique-2021-Mayo1590?id=<?= $missionApollo['id'] ?></guid>
+                <guid isPermaLink="false">https://lune.mayalennox.com/?id=<?= $missionApollo['id'] ?></guid>
                 <description>
-                    <![CDATA[<img src="https://tiweb.cgmatane.qc.ca/etudiants/2020/lennoxm/projet-web-dynamique-2021-Mayo1590/image/<?= $missionApollo['image'] ?>" alt="image"/>]]>
+                    <![CDATA[<img src="https://lune.mayalennox.com//image/<?= $missionApollo['image'] ?>" alt="image"/>]]>
                     <![CDATA[<?= $missionApollo['astronautes'] ?>/>]]>
                     <![CDATA[<?= $missionApollo['date'] ?>/>]]>
                 </description>
