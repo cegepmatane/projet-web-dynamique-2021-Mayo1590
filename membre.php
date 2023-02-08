@@ -9,10 +9,11 @@ include "include/head.php";
     <h1 class="mt-5 text-light text-center fw-lighter">Page membre</h1>
     <?php
     if (empty($_SESSION['membre']['pseudonyme'])) {
-        include_once "membre/formulaire-membre-authentification.php";
+        
         echo '<div>
-                    <a class="btn btn-primary mt-5 mb-5" href="membre/inscription-identification.php" role="button">Créer un compte</a>
+                    <a class="btn btn-primary ms-5 mt-5 mb-5" href="membre/inscription-identification.php" role="button">Créer un compte</a>
               </div>';
+        include_once "membre/formulaire-membre-authentification.php";
     } else {
         $membre = MembreDAO::lireMembre($_SESSION['membre']['pseudonyme']);
 
