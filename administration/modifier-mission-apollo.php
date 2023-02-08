@@ -1,13 +1,9 @@
 <?php
+require '../configuration.php';
+include_once CHEMIN_ACCESSEUR . 'MissionApolloDAO.php';
+
 $noMission = filter_input($_GET['mission'], FILTER_SANITIZE_NUMBER_INT);
-
-$SQL_MISSION_APOLLO = "SELECT * FROM `missionsapollo` WHERE `id` = :id";
-
-include "basededonnees.php";
-$requeteMissionApollo = $basededonnees->prepare($SQL_MISSION_APOLLO);
-$requeteMissionApollo->bindParam(':id', $noMission, PDO::PARAM_INT);
-$requeteMissionApollo->execute();
-$missionApollo = $requeteMissionApollo->fetch();
+$missionApollo = MissionApolloDAO::lireMissionApollo($noMission);
 
 ?>
 <!DOCTYPE html>

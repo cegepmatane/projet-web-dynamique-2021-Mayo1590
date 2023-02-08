@@ -1,12 +1,7 @@
 <?php
-
-require "basededonnees.php";
-
-$MESSAGE_SQL_LISTE_MISSION_APOLLO = "SELECT `id`, `titre`, `astronautes`, `date`, `image` FROM `missionsapollo`";
-
-$requeteListeMissionApollo = $basededonnees->prepare($MESSAGE_SQL_LISTE_MISSION_APOLLO);
-$requeteListeMissionApollo->execute();
-$listeMissionApollo = $requeteListeMissionApollo->fetchAll();
+require '../configuration.php';
+include_once CHEMIN_ACCESSEUR . 'MissionApolloDAO.php';
+$listeMissionApollo = MissionApolloDAO::listerMissionApollo();
 ?>
 
 <!DOCTYPE html>
