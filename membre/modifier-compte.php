@@ -1,13 +1,11 @@
 <?php
-$pseudonymeSession = $_SESSION['pseudonyme'];
+include "../include/header-membre.php";
+include "../configuration.php";
+$pseudonymeSession = $_SESSION['membre']['pseudonyme'];
 
-include "../basededonnees.php";
+include CHEMIN_ACCESSEUR . "MembreDAO.php";
 
-$SQL_LIRE_MEMBRE = "SELECT * FROM membre WHERE pseudonyme = '$pseudonymeSession";
-
-$requeteMemebre = $basededonnees->prepare($SQL_LIRE_MEMBRE);
-$requeteMemebre->execute();
-$membre = $requeteMemebre->fetch();
+$membre = MembreDAO::lireMembre($pseudonymeSession);
 ?>
 
 <section>
@@ -55,3 +53,5 @@ $membre = $requeteMemebre->fetch();
 
     </form>
 </section>
+
+<?php include "../include/footer.php"; ?>
