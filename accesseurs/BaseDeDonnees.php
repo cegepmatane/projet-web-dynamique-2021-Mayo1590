@@ -7,21 +7,10 @@ class BaseDeDonnees
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
 
-        $adresseCourante = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-        $estSurServeurTim = strpos($adresseCourante, 'tiweb.cgmatane.qc.ca') !== false ? true : false;
-
-        if ($estSurServeurTim) {
-            $usager = 'tiweb_lennoxm';
-            $motdepasse = 'n2vjdfzpF9';
-            $hote = 'localhost';
-            $base = 'tiweb_lennoxm';
-        } else {
-            $usager = 'lune';
-            $motdepasse = 'V!y0j%1hsg';
-            $hote = 'localhost';
-            $base = 'lune';
-        }
+        $usager = 'lune';
+        $motdepasse = 'V!y0j%1hsg'; //ceci est un exemple
+        $hote = 'localhost';
+        $base = 'lune';
 
         $dsn = 'mysql:dbname=' . $base . ';host=' . $hote;
         $basededonnees = new PDO($dsn, $usager, $motdepasse);
