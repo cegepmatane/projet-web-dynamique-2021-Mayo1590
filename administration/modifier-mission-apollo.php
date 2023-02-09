@@ -6,6 +6,8 @@ $noMission = filter_input($_GET['mission'], FILTER_SANITIZE_NUMBER_INT);
 $missionApollo = MissionApolloDAO::lireMissionApollo($noMission);
 
 include 'include/header.php';
+if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseudonyme']) && $_SESSION['membre']['permission'] > 0)
+{
 ?>
 
     <header>
@@ -62,4 +64,4 @@ include 'include/header.php';
         </div>
     </section>
 
-<?php include 'include/footer.php'; ?>
+<?php } include 'include/footer.php'; ?>

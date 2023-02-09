@@ -4,6 +4,8 @@ include_once CHEMIN_ACCESSEUR . 'MissionApolloDAO.php';
 $listeMissionApollo = MissionApolloDAO::listerMissionApollo();
 
 include 'include/header.php';
+if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseudonyme']) && $_SESSION['membre']['permission'] > 0)
+{
 ?>
 
     <section>
@@ -31,4 +33,4 @@ include 'include/header.php';
         </div>
     </section>
 
-<?php include 'include/footer.php'; ?>
+<?php } include 'include/footer.php'; ?>

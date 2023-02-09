@@ -7,6 +7,8 @@ $listeCategorie = MissionApolloDAO::listerCategories();
 $contenu = MissionApolloDAO::calculerContenu();
 
 include 'include/header.php';
+if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseudonyme']) && $_SESSION['membre']['permission'] > 0)
+{
 ?>
 <style>
     body {
@@ -93,5 +95,6 @@ include 'include/header.php';
     </script>
 
 <?php 
+}
 include 'include/footer.php';
 ?>
