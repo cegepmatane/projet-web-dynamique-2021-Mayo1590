@@ -19,6 +19,7 @@ if (isset($_POST['membre-authentification'])) {
         $_SESSION['membre']['courriel'] = $membreTrouve['courriel'];
         $_SESSION['membre']['organisation'] = $membreTrouve['organisation'];
         $_SESSION['membre']['avatar'] = $membreTrouve['avatar'];
+        $_SESSION['membre']['permission'] = $membreTrouve['permission'];
 
         header('Location: ../index.php');
     } else {

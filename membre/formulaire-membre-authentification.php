@@ -1,11 +1,11 @@
-<form method="post" class="centre text-center" action="membre/traitement-authentification.php">
+<form method="post" class="text-center" action="membre/traitement-authentification.php">
 
-    <div class="input-group mt-5 ms-5 me-5 w-75">
+    <div class="input-group mt-5 w-75 centre">
         <span class="input-group-text">Pseudonyme</span>
         <input type="text" class="form-control" name="pseudonyme" />
     </div>
 
-    <div class="input-group mt-5 ms-5 me-5 w-75">
+    <div class="input-group mt-5 w-75 centre">
         <span class="input-group-text">Mot de passe</span>
         <input type="password" class="form-control" name="mdp" />
     </div>

@@ -23,7 +23,7 @@ ClicDAO::enregistrerVisite($_SERVER);
                     <div class="col-3">
                         <h3 class="titre"><?= $missionApollo['titre'] ?></h3>
                         <p class="astronautes">Astronautes présent: <?= $missionApollo['astronautes'] ?></p>
-                        <span class="date">Date de la mission: <?= $missionApollo['date'] ?></span><br>
+                        <span class="date">Date de la mission: <?= $missionApollo['date'] ?></span>
                         <a class="btn btn-primary mt-2" href="mission-apollo.php?mission=<?= $missionApollo['id']; ?>" role="button">Voir plus...</a>
                     </div>
                 </div>

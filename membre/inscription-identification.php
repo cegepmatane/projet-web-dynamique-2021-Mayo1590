@@ -12,24 +12,26 @@ include "../include/head-membre.php"
     }
     ?>
 
-    <form method="post" class="mx-2 mt-5 text-center row" action="inscription-informations.php">
+    <form method="post" class="mx-2 mt-5 text-center" action="inscription-informations.php">
 
-        <div class="input-group mt-5 col">
-            <span class="input-group-text">Prénom</span>
-            <input type="text" class="form-control" name="prenom" />
+        <div class="row w-75 centre">
+            <div class="input-group mt-5 col">
+                <span class="input-group-text">Prénom</span>
+                <input type="text" class="form-control" name="prenom" />
+            </div>
+
+            <div class="input-group mt-5 col">
+                <span class="input-group-text">Nom</span>
+                <input type="text" class="form-control" name="nom" />
+            </div>
         </div>
 
-        <div class="input-group mt-5 col">
-            <span class="input-group-text">Nom</span>
-            <input type="text" class="form-control" name="nom" />
-        </div>
-
-        <div class="input-group mt-5">
+        <div class="input-group mt-5 w-75 centre">
             <span class="input-group-text">Organisation</span>
             <input type="text" class="form-control" name="organisation" />
         </div>
 
-        <div class="input-group mt-5">
+        <div class="input-group mt-5 w-75 centre">
             <span class="input-group-text">Courriel</span>
             <input type="text" class="form-control" name="courriel" />
         </div>

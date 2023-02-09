@@ -1,16 +1,15 @@
 body {
   background: no-repeat top / cover url("../image/background.jpg");
   min-height: 100vh;
-  max-width: 100%;
   position: relative;
 }
 
 .contenu {
-  padding-bottom: 10rem;
+  padding-bottom: 3rem;
 }
 
 .image {
-  width: 150px;
+  width: 175px;
   height: auto;
 }
 
@@ -29,8 +28,13 @@ body {
   margin-right: auto;
 }
 
-img {
-  position: absolute;
+.centre-pourcentage {
+  margin-left: 43%;
+  margin-right: 50%;
+  width: 15%;
+}
+
+.image-liste {
   margin-left: auto;
   margin-right: auto;
   max-width: 300px;
@@ -41,5 +45,5 @@ footer {
   bottom: 0;    
   left: 0;
   width: 100%;
-  height: 7rem;
+  height: 2rem;
 }

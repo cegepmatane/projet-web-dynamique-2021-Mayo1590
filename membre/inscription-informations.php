@@ -47,24 +47,26 @@ if (isset($_POST['inscription-identification'])) {
 <section id="contenu">
     <h2 class="mt-5 text-light text-center fw-lighter">Inscription d'un membre - Information 2/2</h2>
 
-    <form method="post" class="mx-2 mt-5 text-center row" enctype="multipart/form-data" action="traitement.php">
+    <form method="post" class="mx-2 mt-5 text-center" enctype="multipart/form-data" action="traitement.php">
 
-        <div class="input-group mt-5">
+        <div class="input-group mt-5 w-75 centre">
             <span class="input-group-text">Pseudonyme</span>
             <input type="text" class="form-control" name="pseudonyme" />
         </div>
 
-        <div class="input-group mt-5 col">
-            <span class="input-group-text">Mot de passe</span>
-            <input type="password" class="form-control" name="mdp" />
+        <div class="row w-75 centre">
+            <div class="input-group mt-5 col">
+                <span class="input-group-text">Mot de passe</span>
+                <input type="password" class="form-control" name="mdp" />
+            </div>
+
+            <div class="input-group mt-5 col">
+                <span class="input-group-text">Confirmation mot de passe</span>
+                <input type="password" class="form-control" name="mdp2" />
+            </div>
         </div>
 
-        <div class="input-group mt-5 col">
-            <span class="input-group-text">Confirmation mot de passe</span>
-            <input type="password" class="form-control" name="mdp2" />
-        </div>
-
-        <div class="mb-5 mt-5">
+        <div class="mb-5 mt-5 w-75 centre">
             <input class="form-control" type="file" name="avatar" id="formFile" />
         </div>
 

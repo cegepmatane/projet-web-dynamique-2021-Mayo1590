@@ -1,4 +1,0 @@
-AuthName "Page d'admdministration protégée"
-AuthType Basic
-AuthUserFile "/var/www/lune.mayalennox.com/MDP/.htpasswd"
-Require valid-user

@@ -11,7 +11,7 @@ include "include/head.php";
     if (empty($_SESSION['membre']['pseudonyme'])) {
         
         echo '<div>
-                    <a class="btn btn-primary ms-5 mt-5 mb-5" href="membre/inscription-identification.php" role="button">Créer un compte</a>
+                    <a class="btn btn-lg btn-primary centre-pourcentage mt-5 mb-5" href="membre/inscription-identification.php" role="button">Créer un compte</a>
               </div>';
         include_once "membre/formulaire-membre-authentification.php";
     } else {

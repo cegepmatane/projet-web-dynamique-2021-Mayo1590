@@ -20,7 +20,7 @@ ClicDAO::enregistrerVisite($_SERVER);
         <div class="card-body bg-secondary text-light">
             <h1 class="text-light fw-lighter text-center"><?= $missionApollo['titre']; ?></h1>
             <div class="ms-5">
-                <div class="image"><img src="image/<?= $missionApollo['image'] ?>" alt="image" /></div>
+                <div><img src="image/<?= $missionApollo['image'] ?>" alt="image" class="image-liste"/></div>
 
                 <h4>Astronautes présent :</h4>
                 <p class="astronautes"><?= $missionApollo['astronautes'] ?></p>
@@ -43,6 +43,11 @@ ClicDAO::enregistrerVisite($_SERVER);
             <a class="btn btn-primary btn-lg mt-2" href="liste-mission-apollo.php" role="button">Revenir...</a>
         </div>
     </div>
+
+    <div class="row">
+            <p class="col">Créateur : <?= $missionApollo['createur']?></p>
+            <p class="col">Date de création : <?= $missionApollo['dateCrea']?></p>
+        </div>
 </section>
 
 <?php
