@@ -20,8 +20,9 @@ ClicDAO::enregistrerVisite($_SERVER);
             </div>
         </form>
         <p class="me-5 mt-5 col text-light fs-5">
-            Bienvenue sur mon site, vous pouvez voir les missions apollo sous ou si vous souhaiter en ajouter vous pouvez utiliser le compte administrateur 
-            AdminLune avec le mot de passe AdminLune1234, il permet aussi d'explorer le panneau admin. Veuillez noter que ce compte permet seulement d'ajouter des éléments
+            Bienvenue sur mon site, vous pouvez voir les missions apollo sous les missions apollo ou en rechercher dans la barre de recherche. 
+            Si vous souhaiter en ajouter vous pouvez utiliser le compte administrateur 
+            AdminLune avec le mot de passe AdminLune1234, il permet aussi d'explorer le panneau admin. Veuillez noter que ce compte permet seulement d'ajouter des éléments et
             vous pouvez seulement explorer la page de modification. 
         </p>
     </section>
