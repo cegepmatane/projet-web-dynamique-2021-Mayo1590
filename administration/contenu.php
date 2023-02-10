@@ -1,12 +1,10 @@
 <?php
-
-include "../configuration.php";
+include 'include/header.php';
 
 require "../accesseurs/MissionApolloDAO.php";
 $listeCategorie = MissionApolloDAO::listerCategories();
 $contenu = MissionApolloDAO::calculerContenu();
 
-include 'include/header.php';
 if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseudonyme']) && $_SESSION['membre']['permission'] > 0)
 {
 ?>
@@ -15,7 +13,7 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
         background: no-repeat top / cover url("") !important;
     }
 </style>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <header>
         <h1 class="fw-lighter text-center mx-3 mt-5">
             Statistique des missions Apollo

@@ -4,7 +4,7 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
 {
 ?>
     <header>
-        <h1 class="fw-lighter text-center mx-3 mt-5">
+        <h1 class="fw-lighter text-center mx-3 mt-5 text-light">
             Dashboard
         </h1>
     </header>
@@ -19,23 +19,13 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
         </div>
 
         <div class="card mx-2 text-center mb-5 mt-5 bg-success col">
-            <img src="../image/pensee.jpg" class="card-img-top" alt="pensée">
-            <div class="card-body">
-                <h5 class="card-title mb-3">Pensée du jour</h5>
-                <a href="#" class="btn btn-light">Voir plus</a>
-            </div>
-        </div>
-
-        <div class="card mx-2 text-center mb-5 mt-5 bg-success col">
             <img src="../image/contenu.jpg" class="card-img-top" alt="contenu">
             <div class="card-body">
                 <h5 class="card-title mb-3">Statistiques de contenu</h5>
                 <a href="contenu.php" class="btn btn-light">Voir plus</a>
             </div>
         </div>
-    </section>
 
-    <section class="row mx-3">
         <div class="card text-center mb-5 mt-5 bg-success col">
             <img src="../image/visite.jpg" class="card-img-top" alt="liste">
             <div class="card-body">
@@ -43,22 +33,7 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
                 <a href="visites.php" class="btn btn-light">Voir plus</a>
             </div>
         </div>
-
-        <div class="card mx-2 text-center mb-5 mt-5 bg-success col">
-            <img src="../image/humeur.jpg" class="card-img-top" alt="pensée">
-            <div class="card-body">
-                <h5 class="card-title mb-3">Humeur du jour</h5>
-                <a href="#" class="btn btn-light">Voir plus</a>
-            </div>
-        </div>
-
-        <div class="card mx-2 text-center mb-5 mt-5 bg-success col">
-            <img src="../image/image.jpg" class="card-img-top" alt="contenu">
-            <div class="card-body">
-                <h5 class="card-title mb-3">Image du jour</h5>
-                <a href="#" class="btn btn-light">Voir plus</a>
-            </div>
-        </div>
     </section>
+        
 
 <?php } include 'include/footer.php'  ?>

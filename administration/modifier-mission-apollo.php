@@ -1,23 +1,26 @@
 <?php
-require '../configuration.php';
+include 'include/header.php';
 include_once CHEMIN_ACCESSEUR . 'MissionApolloDAO.php';
 
-$noMission = filter_input($_GET['mission'], FILTER_SANITIZE_NUMBER_INT);
+echo 'titi:' . $_GET['mission'];
+$noMission = filter_input($_GET['mission'], FILTER_VALIDATE_INT);
+echo 'toto:' . $noMission;
 $missionApollo = MissionApolloDAO::lireMissionApollo($noMission);
 
-include 'include/header.php';
+var_dump($missionApollo);
+
 if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseudonyme']) && $_SESSION['membre']['permission'] > 0)
 {
 ?>
 
     <header>
-        <h1 class="fw-lighter text-center mx-3 mt-5">Panneau d'administration-Les missions Apollo</h1>
+        <h1 class="fw-lighter text-center mx-3 mt-5 text-light">Panneau d'administration - Les missions Apollo</h1>
     </header>
 
     <section id="contenu" class="mt-5 mb-5 mx-3 card">
         <div class="card-body bg-secondary text-center">
             <h2>Modifier une mission Apollo</h2>
-
+            
             <form action="traitement-modifier-mission-apollo.php" method="post" class="row">
                 <div class="input-group mt-5 col">
                     <span for="titre" class="input-group-text">Mission</span>
@@ -57,9 +60,21 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
                 <div class="mb-5">
                     <input class="form-control" type="file" id="formFile" value="<?= $missionApollo['image'] ?>" />
                 </div>
-
-                <input type="submit" class="btn btn-primary mt-2" value="Enregistrer" />
-                <input type="hidden" name="id" value="<?= $missionApollo['id'] ?>" />
+                
+                <?php
+                if($_SESSION['membre']['permission'] == 2) {
+                ?>
+                    <input type="submit" class="btn btn-primary mt-2" value="Enregistrer" />
+                    <input type="hidden" name="id" value="<?= $missionApollo['id'] ?>" />
+                <?php
+                }
+                else {
+                ?>    
+                    <input type="submit" class="btn btn-primary mt-2 disabled" value="Enregistrer" />
+                    <p class="text-warning">Avertissement! Vous n'avez pas les droits pour modifier.</p>
+                <?php
+                }
+                ?>
             </form>
         </div>
     </section>

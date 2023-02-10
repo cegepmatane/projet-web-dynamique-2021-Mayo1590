@@ -1,5 +1,5 @@
 <?php
-session_start();
+require 'configuration.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -36,6 +36,9 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="visites.php">Visites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="https://lune.mayalennox.com/">Revenir au site</a>
                     </li>
                 </ul>
                 <form class="d-flex">

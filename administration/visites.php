@@ -1,13 +1,12 @@
 <?php
 
-include "../configuration.php";
+include 'include/header.php';
 require "../accesseurs/ClicDAO.php";
 $listePArJour = ClicDAO::listerStatsParJour();
 $joursDeLaSemaine = array("Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi");
 
 $listePArLangue = ClicDAO::listerStatsParLangue();
 
-include 'include/header.php';
 ?>
 <!--temp-->
 <style>
@@ -15,7 +14,7 @@ include 'include/header.php';
         background: no-repeat top / cover url("") !important;
     }
 </style>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <header>
         <h1 class="fw-lighter text-center mx-3 mt-5">
             Tableau Statistiques
