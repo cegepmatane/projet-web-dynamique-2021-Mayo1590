@@ -19,7 +19,7 @@ if (isset($_POST['inscription-identification'])) {
 
         if ($membre) {
             $_SESSION['erreur'] = "Ce courriel est déjà utilisé";
-            header("location: inscripion-identification.php");
+            header("location: inscription-identification.php");
         }
 
         if (!empty($_POST['inscription-identification'])) {
@@ -38,7 +38,7 @@ if (isset($_POST['inscription-identification'])) {
 
 <span id="erreur2">
     <?php if (!empty($_SESSION['erreur2'])) {
-        echo $_SESSION['erreur2'];
+         echo '<p class="text-warning">' . $_SESSION['erreur2'] . '</p>';
         unset($_SESSION['erreur2']);
     }
     ?>
@@ -76,5 +76,5 @@ if (isset($_POST['inscription-identification'])) {
 </section>
 
 <?php
-include "../include/footer.php"
+include "../include/footer-membre.php"
 ?>

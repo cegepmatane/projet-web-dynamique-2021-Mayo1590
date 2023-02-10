@@ -1,5 +1,5 @@
 <?php
-require_once CHEMIN_ACCESSEUR . "BaseDeDonnees.php";
+require_once CHEMIN_ACCESSEUR . "secret/BaseDeDonnees.php";
 
 class ClicDAO
 {

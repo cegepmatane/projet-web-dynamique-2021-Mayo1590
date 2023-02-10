@@ -9,8 +9,6 @@ $reussite = MissionApolloDAO::supprimerMissionApollo($id);
 
 <?php
 if ($reussite) {
-?>
-    Votre mission a été supprimer dans la base de données.
-<?php
+    header('location: liste-mission-apollo.php');
 }
 ?>

@@ -8,7 +8,7 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
 {
 ?>
 
-    <section>
+    <section class="marge">
         <h1 class="mt-5 text-center fw-lighter text-light">Panneau d'administration - Les missions Apollo</h1>
 
         <a class="btn btn-lg btn-primary mx-3 mt-2" href="ajouter-mission-apollo.html" role="button">Ajouter</a>
@@ -17,7 +17,7 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
             <?php
             foreach ($listeMissionApollo as $missionApollo) {
             ?>
-                <div class="mt-5 mb-5 mx-3 card text-center marge">
+                <div class="mt-5 mb-5 mx-3 card text-center">
                     <div class="card-body bg-secondary row">
                         <h3 class="titre"><?= $missionApollo['titre'] ?></h3>
                         <p class="astronautes">Astronautes présent: <?= $missionApollo['astronautes'] ?></p>

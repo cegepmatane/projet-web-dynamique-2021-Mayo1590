@@ -7,8 +7,8 @@ class BaseDeDonnees
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
 
-        $usager = 'lune';
-        $motdepasse = 'V!y0j%1hsg'; //ceci est un exemple
+        $usager = ''; 
+        $motdepasse = '';
         $hote = 'localhost';
         $base = 'lune';
 

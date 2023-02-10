@@ -23,7 +23,7 @@
     <span><?= $membre['organisation'] ?></span>
 </div>
 
-<div id="membre-avatar" class="text-light mx-2 mb-5">
+<div id="membre-avatar" class="text-light mx-2 mb-5 image">
     <label>Avatar : </label>
     <img src="image/<?= $membre['avatar'] ?>" alt="avatar" class="avatar" />
 </div>

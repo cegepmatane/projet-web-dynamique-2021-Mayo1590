@@ -7,7 +7,7 @@ include "../include/head-membre.php"
     <h2 class="mt-5 text-light text-center fw-lighter">Inscription d'un membre - Identification 1/2</h2>
 
     <?php if (!empty($_SESSION['erreur'])) {
-        echo $_SESSION['erreur'];
+        echo '<p class="text-warning">' . $_SESSION['erreur'] . '</p>';
         unset($_SESSION['erreur']);
     }
     ?>
@@ -42,5 +42,5 @@ include "../include/head-membre.php"
 </section>
 
 <?php
-include "../include/footer.php"
+include "../include/footer-membre.php"
 ?>

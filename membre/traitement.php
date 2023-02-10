@@ -4,7 +4,7 @@ require CHEMIN_ACCESSEUR . "MembreDAO.php";
 
 $fichier_source = $_FILES['avatar']['tmp_name'];
 $racine_serveur = $_SERVER['DOCUMENT_ROOT'];
-$repertoire_projet = "/etudiants/2020/lennoxm/projet-web-dynamique-2021-Mayo1590";
+$repertoire_projet = "";
 $repertoire_avatar = '/image/';
 $avatar = $_FILES['avatar']['name'];
 $fichier_destination = $racine_serveur . $repertoire_projet . $repertoire_avatar . $avatar;

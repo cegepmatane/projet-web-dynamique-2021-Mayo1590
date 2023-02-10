@@ -31,8 +31,6 @@ $retour = filter_var($_POST['retour'], FILTER_SANITIZE_STRING);
 
 <?php
 if ($reussiteModification) {
-?>
-    Votre mission a été modifié dans la base de données.
-<?php
+    header('location: liste-mission-apollo.php');
 }
 ?>

@@ -40,8 +40,7 @@ $reussiteAjout = MissionApolloDAO::ajouterMissionApollo($titre, $astronautes, $d
 
 <?php
 if ($reussiteAjout) {
-?>
-    Votre mission a été ajouté à la base de données.
-<?php
+
+    header('location: liste-mission-apollo.php');
 }
 ?>

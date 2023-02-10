@@ -70,7 +70,7 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
                 }
                 else {
                 ?>    
-                    <input type="submit" class="btn btn-primary mt-2 disabled" value="Enregistrer" />
+                    <input type="" class="btn btn-primary mt-2 disabled" value="Enregistrer" />
                     <p class="text-warning">Avertissement! Vous n'avez pas les droits pour modifier.</p>
                 <?php
                 }
