@@ -30,6 +30,16 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="../recherche-avancee.php">Recherche avancée</a>
                     </li>
+                    <?php
+                    if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseudonyme']) && $_SESSION['membre']['permission'] > 0)
+                    {
+                    ?>    
+                    <li class="nav-item">
+                        <a class="nav-link active" href="https://lune.mayalennox.com/administration/">Administration</a>
+                    </li>
+                    <?php
+                    }
+                    ?>
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
