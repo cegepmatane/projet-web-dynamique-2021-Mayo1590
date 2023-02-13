@@ -1,11 +1,12 @@
 <?php
 include 'include/header.php';
-if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseudonyme']) && $_SESSION['membre']['permission'] > 0)
+$pseudo =  $_SESSION['membre']['pseudonyme'];
+if (isset($pseudo) && !empty($pseudo) && $_SESSION['membre']['permission'] > 0)
 {
 ?>
     <header>
-      <h1 class="fw-lighter text-center mx-3 mt-5">
-        Panneau d'administration-Les missions Apollo
+      <h1 class="fw-lighter text-center mx-3 mt-5 text-light">
+        Panneau d'administration - Les missions Apollo
       </h1>
     </header>
 
@@ -54,9 +55,11 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
             </div>
           </div>
 
-          <div class="mb-5">
+          <div class="mb-5 w-75 centre">
             <input class="form-control" type="file" name="image" id="formFile" />
           </div>
+
+          <input type="hidden" name="createur" value="<?= $pseudo ?>"/>
 
           <input type="submit" class="btn btn-primary mt-2" value="Enregistrer"/>
         </form>
@@ -65,5 +68,5 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
 
 <?php
 }
-include 'footer.php';
+include 'include/footer.php';
 ?>

@@ -4,7 +4,7 @@ require CHEMIN_ACCESSEUR . 'MissionApolloDAO.php';
 
 $fichier_source = $_FILES['image']['tmp_name'];
 $racine_serveur = $_SERVER['DOCUMENT_ROOT'];
-$repertoire_projet = "/etudiants/2020/lennoxm/projet-web-dynamique-2021-Mayo1590/liste-mission-apollo.php";
+$repertoire_projet = "";
 $repertoire_image = '/image/';
 $image = $_FILES['image']['name'];
 $fichier_destination = $racine_serveur . $repertoire_projet . $repertoire_image . $image;
@@ -34,8 +34,9 @@ $resume = addslashes(filter_var($_POST['resume'], FILTER_SANITIZE_STRING));
 $progres = addslashes(filter_var($_POST['progres'], FILTER_SANITIZE_STRING));
 $reussi = addslashes(filter_var($_POST['reussi'], FILTER_SANITIZE_STRING));
 $retrour = filter_var($_POST['retour'], FILTER_SANITIZE_STRING);
+$createur = filter_var($_POST['createur'], FILTER_SANITIZE_STRING);
 
-$reussiteAjout = MissionApolloDAO::ajouterMissionApollo($titre, $astronautes, $date, $resume, $progres, $reussi, $retrour, $image);
+$reussiteAjout = MissionApolloDAO::ajouterMissionApollo($titre, $astronautes, $date, $resume, $progres, $reussi, $retrour, $image, $createur);
 ?>
 
 <?php

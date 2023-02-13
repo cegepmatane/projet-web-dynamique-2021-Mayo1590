@@ -10,7 +10,7 @@
         <input type="password" class="form-control" name="mdp" />
     </div>
 
-    <input type="submit" class="btn btn-primary mt-5" name="membre-authentification" href="membre/traitement-authentification.php" />
+    <input type="submit" class="btn btn-primary mt-5 centre-pourcentage" name="membre-authentification" href="membre/traitement-authentification.php" />
 
     <span id="erreur3">
         <?php if (!empty($_SESSION['erreur3'])) {

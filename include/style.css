@@ -1,11 +1,11 @@
 body {
   background: no-repeat top / cover url("../image/background.jpg");
-  min-height: 100vh;
   position: relative;
+  max-width: 99.3vw;
 }
 
 .contenu {
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
 
 .image {
@@ -14,7 +14,7 @@ body {
 }
 
 .chart-container {
-  height: 100vh;
+  height: 60vh;
   width: 40vw;
 }
 
@@ -41,7 +41,8 @@ body {
 }
 
 footer {
-  position: absolute;
+  margin-top: 2%;
+  position: relative;
   bottom: 0;    
   left: 0;
   width: 100%;

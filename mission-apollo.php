@@ -44,7 +44,7 @@ ClicDAO::enregistrerVisite($_SERVER);
         </div>
     </div>
 
-    <div class="row">
+    <div class="row text-light">
             <p class="col">Créateur : <?= $missionApollo['createur']?></p>
             <p class="col">Date de création : <?= $missionApollo['dateCrea']?></p>
         </div>

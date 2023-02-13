@@ -11,7 +11,7 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
     <section class="marge">
         <h1 class="mt-5 text-center fw-lighter text-light">Panneau d'administration - Les missions Apollo</h1>
 
-        <a class="btn btn-lg btn-primary mx-3 mt-2" href="ajouter-mission-apollo.html" role="button">Ajouter</a>
+        <a class="btn btn-lg btn-primary mx-3 mt-2" href="ajouter-mission-apollo.php" role="button">Ajouter</a>
 
         <div id="liste-mission-apollo">
             <?php
