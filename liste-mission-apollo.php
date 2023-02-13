@@ -9,7 +9,7 @@ require "accesseurs/ClicDAO.php";
 ClicDAO::enregistrerVisite($_SERVER);
 ?>
 
-<section class="marge">
+<section class="marge contenu">
     <h1 class="mt-5 text-light text-center fw-lighter">Les missions Apollo</h1>
 
     <a class="btn btn-primary ms-5 mt-2 mx-2" href="liste-mission-exel.php" role="button">Exporter la liste vers Excel</a>

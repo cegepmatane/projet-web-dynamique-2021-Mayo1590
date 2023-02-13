@@ -2,7 +2,7 @@
 include "include/head.php";
 ?>
 
-<section id="contenu">
+<section id="contenu" class="contenu">
     <h1 class="mt-5 text-light text-center fw-lighter">Recherche avancée</h1>
     <form method="get" action="resultat-recherche-avancee.php" class="mx-2">
         <div class="input-group mt-5 w-75 centre">

@@ -9,7 +9,7 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
         </h1>
     </header>
 
-    <section class="row mx-3">
+    <section class="row mx-3 marge">
         <div class="card text-center mb-5 mt-5 bg-success col">
             <img src="../image/liste.jpg" class="card-img-top" alt="liste">
             <div class="card-body">

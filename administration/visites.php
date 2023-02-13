@@ -21,57 +21,59 @@ $listePArLangue = ClicDAO::listerStatsParLangue();
         </h1>
     </header>
 
-    <table class="table mt-5">
-        <thead>
-            <tr>
-                <th scope="col">Jour</th>
-                <th scope="col">Clics</th>
-                <th scope="col">Visites</th>
-            </tr>
-        </thead>
-        <?php
-        foreach ($listePArJour as $jourEnregistrer) {
-        ?>
-            <tbody>
+    <section class="contenu">
+        <table class="table mt-5">
+            <thead>
                 <tr>
-                    <th scope="row"><?php
-                                    echo $joursDeLaSemaine[$jourEnregistrer['jour'] - 1];
-                                    ?></th>
-                    <td><?= $jourEnregistrer['clics'] ?></td>
-                    <td><?= $jourEnregistrer['visites'] ?></td>
+                    <th scope="col">Jour</th>
+                    <th scope="col">Clics</th>
+                    <th scope="col">Visites</th>
                 </tr>
-            </tbody>
-        <?php
-        }
-        ?>
-    </table>
+            </thead>
+            <?php
+            foreach ($listePArJour as $jourEnregistrer) {
+            ?>
+                <tbody>
+                    <tr>
+                        <th scope="row"><?php
+                                        echo $joursDeLaSemaine[$jourEnregistrer['jour'] - 1];
+                                        ?></th>
+                        <td><?= $jourEnregistrer['clics'] ?></td>
+                        <td><?= $jourEnregistrer['visites'] ?></td>
+                    </tr>
+                </tbody>
+            <?php
+            }
+            ?>
+        </table>
 
-    <table class="table mt-5">
-        <thead>
-            <tr>
-                <th scope="col">Langue</th>
-                <th scope="col">Clics</th>
-                <th scope="col">Visites</th>
-            </tr>
-        </thead>
-        <?php
-        foreach ($listePArLangue as $langueEnregistrer) {
-        ?>
-            <tbody>
+        <table class="table mt-5">
+            <thead>
                 <tr>
-                    <th scope="row"><?= $langueEnregistrer['langue'] ?></th>
-                    <td><?= $langueEnregistrer['clics'] ?></td>
-                    <td><?= $langueEnregistrer['visites'] ?></td>
+                    <th scope="col">Langue</th>
+                    <th scope="col">Clics</th>
+                    <th scope="col">Visites</th>
                 </tr>
-            </tbody>
-        <?php
-        }
-        ?>
-    </table>
+            </thead>
+            <?php
+            foreach ($listePArLangue as $langueEnregistrer) {
+            ?>
+                <tbody>
+                    <tr>
+                        <th scope="row"><?= $langueEnregistrer['langue'] ?></th>
+                        <td><?= $langueEnregistrer['clics'] ?></td>
+                        <td><?= $langueEnregistrer['visites'] ?></td>
+                    </tr>
+                </tbody>
+            <?php
+            }
+            ?>
+        </table>
 
-    <div class="chart-container mx-2 mb-5 mt-5">
-        <canvas id="graphique-jour"></canvas>
-    </div>
+        <div class="chart-container mx-2 mb-5 mt-5">
+            <canvas id="graphique-jour"></canvas>
+        </div>
+    </section>
 
     <script>
         <?php

@@ -20,50 +20,51 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
         </h1>
     </header>
 
-    <table class="table mt-5">
-        <thead>
-            <tr>
-                <th scope="col">Type de missions</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Nombres de jours moyen</th>
-                <th scope="col">Nombres de jours total</th>
-                <th scope="col">Nombres de jour maximum</th>
-                <th scope="col">Nombre de jours minimum</th>
-            </tr>
-        </thead>
-        <?php
-        foreach ($listeCategorie as $categorie) {
-        ?>
-            <tbody>
+    <section class="contenu">
+        <table class="table mt-5">
+            <thead>
                 <tr>
-                    <th scope="row"><?= $categorie['categorie'] ?></th>
-                    <td><?= $categorie['nombre'] ?></td>
-                    <td><?= floor($categorie['nombresJoursMoyen']) ?></td>
-                    <td><?= $categorie['nombresJoursTotals'] ?></td>
-                    <td><?= $categorie['nombresJoursMax'] ?></td>
-                    <td><?= $categorie['nombresJoursMin'] ?></td>
+                    <th scope="col">Type de missions</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Nombres de jours moyen</th>
+                    <th scope="col">Nombres de jours total</th>
+                    <th scope="col">Nombres de jour maximum</th>
+                    <th scope="col">Nombre de jours minimum</th>
                 </tr>
-            </tbody>
-        <?php
-        }
-        ?>
-    </table>
+            </thead>
+            <?php
+            foreach ($listeCategorie as $categorie) {
+            ?>
+                <tbody>
+                    <tr>
+                        <th scope="row"><?= $categorie['categorie'] ?></th>
+                        <td><?= $categorie['nombre'] ?></td>
+                        <td><?= floor($categorie['nombresJoursMoyen']) ?></td>
+                        <td><?= $categorie['nombresJoursTotals'] ?></td>
+                        <td><?= $categorie['nombresJoursMax'] ?></td>
+                        <td><?= $categorie['nombresJoursMin'] ?></td>
+                    </tr>
+                </tbody>
+            <?php
+            }
+            ?>
+        </table>
 
-    <div class="mx-2">
-        <?php
-        foreach ($contenu as $contenus) {
-        ?>
-            <p>Durée moyenne des missions: <?= floor($contenus["moyenne"]) . " jours" ?></p>
-            <p>Écart-type: <?= round($contenus["ecartType"], 1) ?></p>
-        <?php
-        }
-        ?>
-    </div>
+        <div class="mx-2">
+            <?php
+            foreach ($contenu as $contenus) {
+            ?>
+                <p>Durée moyenne des missions: <?= floor($contenus["moyenne"]) . " jours" ?></p>
+                <p>Écart-type: <?= round($contenus["ecartType"], 1) ?></p>
+            <?php
+            }
+            ?>
+        </div>
 
-    <div class="chart-container mx-2 mb-5 mt-5">
-        <canvas id="graphique"></canvas>
-    </div>
-
+        <div class="chart-container mx-2 mb-5 mt-5">
+            <canvas id="graphique"></canvas>
+        </div>
+    </section>
     <script>
         <?php
         foreach ($listeCategorie as $categorie) {
