@@ -22,21 +22,30 @@ if (isset($_POST['modification'])) {
 
     if (empty($_SESSION['erreur'])) {
         $filtreMembre = array(
-            'pseudonyme' => FILTER_SANITIZE_ENCODED,
+            'id' => FILTER_VALIDATE_INT,
+            'pseudonyme' => FILTER_SANITIZE_STRING,
             'mdp' => FILTER_SANITIZE_ENCODED,
+            'prenom' => FILTER_SANITIZE_STRING,
+            'nom' => FILTER_SANITIZE_STRING,
+            'permission' => FILTER_VALIDATE_INT,
+            'courriel' => FILTER_SANITIZE_STRING,
+            'organisation' => FILTER_SANITIZE_STRING,
+            'avatar' => FILTER_SANITIZE_STRING
         );
 
         $nouveauMembre = filter_input_array(INPUT_POST, $filtreMembre);
-        $_SESSION['membre']['pseudonyme'] = $nouveauMembre['pseudonyme'];
+        $_SESSION['membre'] = $nouveauMembre;
 
         $_SESSION['membre']['mdp'] = password_hash($_POST['mdp'], PASSWORD_BCRYPT);
 
-        $_SESSION['membre']['id'] = $_POST['id'];
 
         $reussiteInscription = MembreDAO::modifierMembre($_SESSION['membre']);
 
         if ($reussiteInscription) {
             header('location: ../membre.php');
+        }
+        else {
+            echo ' erreur !!!!';
         }
     }
 }

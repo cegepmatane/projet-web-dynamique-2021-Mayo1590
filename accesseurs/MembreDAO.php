@@ -47,7 +47,7 @@ class MembreDAO
 
     public static function modifierMembre($membre)
     {
-        $AJOUTER_MEMBRE = "UPDATE membre SET prenom = :prenom, nom = :nom, pseudonyme = :pseudonyme, mdp = :mdp, courriel = :courriel, organisation = :organisation, avatar = :avatar WHERE id = :id";
+        $AJOUTER_MEMBRE = "UPDATE membre SET prenom = :prenom, nom = :nom, pseudonyme = :pseudonyme, mdp = :mdp, courriel = :courriel, organisation = :organisation, avatar = :avatar, permission = :permission WHERE id = :id";
 
         $requeteMemebre = BaseDeDonnees::getConnection()->prepare($AJOUTER_MEMBRE);
         $requeteMemebre->bindParam(':prenom', $membre['prenom'], PDO::PARAM_STR);
@@ -56,8 +56,9 @@ class MembreDAO
         $requeteMemebre->bindParam(':courriel', $membre['courriel'], PDO::PARAM_STR);
         $requeteMemebre->bindParam(':organisation', $membre['organisation'], PDO::PARAM_STR);
         $requeteMemebre->bindParam(':mdp', $membre['mdp'], PDO::PARAM_STR);
+        $requeteMemebre->bindParam(':permission', $membre['permission'], PDO::PARAM_STR);
         $requeteMemebre->bindParam(':avatar', $_SESSION['membre']['avatar'], PDO::PARAM_STR);
-        $requeteMemebre->bindParam(':id', $membre['membre']['id'], PDO::PARAM_STR);
+        $requeteMemebre->bindParam(':id', $membre['id'], PDO::PARAM_STR);
         $reussiteInscription = $requeteMemebre->execute();
 
         return $reussiteInscription;

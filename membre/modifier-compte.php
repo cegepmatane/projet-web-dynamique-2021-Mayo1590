@@ -61,6 +61,7 @@ $membre = MembreDAO::lireMembre($pseudonymeSession);
         </div>
 
         <input type="hidden" name="id" value="<?= $membre['id'] ?>"/>
+        <input type="hidden" name="permission" value="<?= $membre['permission'] ?>"/>
         <?php 
         if($_SESSION['membre']['pseudonyme'] == "AdminLune")
         {
