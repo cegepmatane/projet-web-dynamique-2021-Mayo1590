@@ -45,6 +45,24 @@ class MembreDAO
         return $reussiteInscription;
     }
 
+    public static function modifierMembre($membre)
+    {
+        $AJOUTER_MEMBRE = "UPDATE membre SET prenom = :prenom, nom = :nom, pseudonyme = :pseudonyme, mdp = :mdp, courriel = :courriel, organisation = :organisation, avatar = :avatar WHERE id = :id";
+
+        $requeteMemebre = BaseDeDonnees::getConnection()->prepare($AJOUTER_MEMBRE);
+        $requeteMemebre->bindParam(':prenom', $membre['prenom'], PDO::PARAM_STR);
+        $requeteMemebre->bindParam(':nom', $membre['nom'], PDO::PARAM_STR);
+        $requeteMemebre->bindParam(':pseudonyme', $membre['pseudonyme'], PDO::PARAM_STR);
+        $requeteMemebre->bindParam(':courriel', $membre['courriel'], PDO::PARAM_STR);
+        $requeteMemebre->bindParam(':organisation', $membre['organisation'], PDO::PARAM_STR);
+        $requeteMemebre->bindParam(':mdp', $membre['mdp'], PDO::PARAM_STR);
+        $requeteMemebre->bindParam(':avatar', $_SESSION['membre']['avatar'], PDO::PARAM_STR);
+        $requeteMemebre->bindParam(':id', $membre['membre']['id'], PDO::PARAM_STR);
+        $reussiteInscription = $requeteMemebre->execute();
+
+        return $reussiteInscription;
+    }
+
     public static function trouverCourriel($user)
     {
         $TROUVER_COURRIEL = "SELECT id FROM membre WHERE courriel = :courriel";

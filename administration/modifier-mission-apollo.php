@@ -2,12 +2,8 @@
 include 'include/header.php';
 include_once CHEMIN_ACCESSEUR . 'MissionApolloDAO.php';
 
-echo 'titi:' . $_GET['mission'];
-$noMission = filter_input($_GET['mission'], FILTER_VALIDATE_INT);
-echo 'toto:' . $noMission;
+$noMission = filter_var($_GET['mission'], FILTER_SANITIZE_NUMBER_INT);
 $missionApollo = MissionApolloDAO::lireMissionApollo($noMission);
-
-var_dump($missionApollo);
 
 if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseudonyme']) && $_SESSION['membre']['permission'] > 0)
 {
@@ -39,7 +35,7 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
 
                 <div class="input-group mt-5">
                     <span for="resume" class="input-group-text">Résumé</span>
-                    <input type="text" class="form-control" name="resume" id="resume" value="<?= $missionApollo['resume'] ?>" />
+                    <textarea type="text" class="form-control" name="resume" id="resume"><?= $missionApollo['resume'] ?></textarea>
                 </div>
 
                 <div class="input-group mt-5">
@@ -61,6 +57,8 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
                     <input class="form-control" type="file" id="formFile" value="<?= $missionApollo['image'] ?>" />
                 </div>
                 
+                <input type="hidden" name="id" value="<?= $noMission ?>"/>
+
                 <?php
                 if($_SESSION['membre']['permission'] == 2) {
                 ?>

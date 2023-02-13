@@ -25,9 +25,9 @@ class MissionApolloDAO
         return $missionApollo;
     }
 
-    public static function ajouterMissionApollo($titre, $astronautes, $date, $resume, $progres, $reussi, $retrour, $image)
+    public static function ajouterMissionApollo($titre, $astronautes, $date, $resume, $progres, $reussi, $retrour, $image, $createur)
     {
-        $SQL_AJOUTER_MISSION = "INSERT INTO missionsapollo (titre, astronautes, date, resume, progres, reussi, retour, image) VALUES( :titre, :astronautes, :date, :resume, :progres, :reussi, :retour, :image)";
+        $SQL_AJOUTER_MISSION = "INSERT INTO missionsapollo (titre, astronautes, date, resume, progres, reussi, retour, image, createur) VALUES( :titre, :astronautes, :date, :resume, :progres, :reussi, :retour, :image, :createur)";
         $requeteAjouterMission = BaseDeDonnees::getConnection()->prepare($SQL_AJOUTER_MISSION);
         $requeteAjouterMission->bindParam(':titre', $titre, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':astronautes', $astronautes, PDO::PARAM_STR);
@@ -37,16 +37,18 @@ class MissionApolloDAO
         $requeteAjouterMission->bindParam(':reussi', $reussi, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':retour', $retrour, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':image', $image, PDO::PARAM_STR);
+        $requeteAjouterMission->bindParam(':createur', $createur, PDO::PARAM_STR);
         $reussiteAjout = $requeteAjouterMission->execute();
 
         return $reussiteAjout;
     }
 
-    public static function modifierMissionApollo($titre, $astronautes, $date, $resume, $progres, $reussi, $retrour)
+    public static function modifierMissionApollo($titre, $astronautes, $date, $resume, $progres, $reussi, $retrour, $image, $id)
     {
-        $SQL_AJOUTER_MISSION = "INSERT INTO missionsapollo (titre, astronautes, date, resume, progres, reussi, retour, image) VALUES( :titre, :astronautes, :date, :resume, :progres, :reussi, :retour, :image)";
+        $SQL_AJOUTER_MISSION = "UPDATE missionsapollo SET titre = :titre, astronautes = :astronautes, date = :date, resume = :resume, progres = :progres, reussi = :reussi, retour = :retour, image = :image WHERE id = :id";
 
         $requeteAjouterMission = BaseDeDonnees::getConnection()->prepare($SQL_AJOUTER_MISSION);
+        $requeteAjouterMission->bindParam(':id', $id, PDO::PARAM_INT);
         $requeteAjouterMission->bindParam(':titre', $titre, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':astronautes', $astronautes, PDO::PARAM_STR);
         $requeteAjouterMission->bindParam(':date', $date, PDO::PARAM_STR);
