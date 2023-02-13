@@ -17,43 +17,48 @@ if (isset($_SESSION['membre']['pseudonyme']) && !empty($_SESSION['membre']['pseu
         <div class="card-body bg-secondary text-center">
             <h2>Modifier une mission Apollo</h2>
             
-            <form action="traitement-modifier-mission-apollo.php" method="post" class="row">
-                <div class="input-group mt-5 col">
-                    <span for="titre" class="input-group-text">Mission</span>
-                    <input type="text" class="form-control" name="titre" id="titre" value="<?= $missionApollo['titre'] ?>" />
+            <form action="traitement-modifier-mission-apollo.php" method="post">
+
+                <div class="row w-75 centre">
+                    <div class="input-group mt-5 col">
+                        <span for="titre" class="input-group-text">Mission</span>
+                        <input type="text" class="form-control" name="titre" id="titre" value="<?= $missionApollo['titre'] ?>" />
+                    </div>
+
+                    <div class="input-group mt-5 col">
+                        <span for="astronaute" class="input-group-text">Astronaute</span>
+                        <input type="text" class="form-control" name="astronautes" id="astronautes" value="<?= $missionApollo['astronautes'] ?>" />
+                    </div>
                 </div>
 
-                <div class="input-group mt-5 col">
-                    <span for="astronaute" class="input-group-text">Astronaute</span>
-                    <input type="text" class="form-control" name="astronautes" id="astronautes" value="<?= $missionApollo['astronautes'] ?>" />
-                </div>
-
-                <div class="input-group mt-5">
+                <div class="input-group mt-5 w-75 centre">
                     <span for="date" class="input-group-text">Date</span>
                     <input type="text" placeholder="ex: 2021-02-03" class="form-control" name="date" id="date" value="<?= $missionApollo['date'] ?>" />
                 </div>
 
-                <div class="input-group mt-5">
+                <div class="input-group mt-5 w-75 centre">
                     <span for="resume" class="input-group-text">Résumé</span>
                     <textarea type="text" class="form-control" name="resume" id="resume"><?= $missionApollo['resume'] ?></textarea>
                 </div>
 
-                <div class="input-group mt-5">
+                <div class="input-group mt-5 w-75 centre">
                     <span for="progres" class="input-group-text">Progrès</span>
                     <input type="text" class="form-control" name="progres" id="progres" value="<?= $missionApollo['progres'] ?>" />
                 </div>
 
-                <div class="input-group mt-5 mb-5 col">
-                    <span for="reussis" class="input-group-text">Réussite</span>
-                    <input type="text" class="form-control" name="reussi" id="reussis" value="<?= $missionApollo['reussi'] ?>" />
+                <div class="row w-75 centre">
+                    <div class="input-group mt-5 mb-5 col">
+                        <span for="reussis" class="input-group-text">Réussite</span>
+                        <input type="text" class="form-control" name="reussi" id="reussis" value="<?= $missionApollo['reussi'] ?>" />
+                    </div>
+
+                    <div class="input-group mt-5 mb-5 col">
+                        <span for="retour-astronaute" class="input-group-text">Astronaute en vie</span>
+                        <input type="text" class="form-control" name="retour" id="retour-astronaute" value="<?= $missionApollo['retour'] ?>" />
+                    </div>
                 </div>
 
-                <div class="input-group mt-5 mb-5 col">
-                    <span for="retour-astronaute" class="input-group-text">Astronaute en vie</span>
-                    <input type="text" class="form-control" name="retour" id="retour-astronaute" value="<?= $missionApollo['retour'] ?>" />
-                </div>
-
-                <div class="mb-5">
+                <div class="mb-5 w-75 centre">
                     <input class="form-control" type="file" id="formFile" value="<?= $missionApollo['image'] ?>" />
                 </div>
                 
